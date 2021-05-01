@@ -1,4 +1,8 @@
 import React from "react";
+import MultiButton from "../MultiButton";
+import ThumbButton from "../ThumbButton";
+import AnyQuestions from "../AnyQuestions";
+// import chart
 
 class QuestionSwitch extends React.Component {
   constructor(props) {
@@ -7,7 +11,7 @@ class QuestionSwitch extends React.Component {
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-  }
+  };
 
   handleChange(e) {
     this.setState({ value: e.target.value });
@@ -16,29 +20,35 @@ class QuestionSwitch extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
   }
-  //   switch (value) {
-  //     case "multipleChocie":
-  //       return multipleChoice();
-  //     case "thumbsChoice":
-  //       return thumbsChoice();
-  //     default:
-  //       return questionsPrompt();
-  //   }
+    
   render() {
+    console.log(this.state.value);
+    let option;
+
+      if (this.state.value === "multipleChoice") {
+        option = <MultiButton />
+      } else if (this.state.value === "thumbsChoice") {
+        option = <ThumbButton />
+      } else if (this.state.value === "questionsPrompt") {
+        option = <AnyQuestions />
+      }
+      
     return (
       <div>
         <input className="questionName"></input>
         <h3>Understanding/Comfort</h3>
 
-        <form onSumbit={this.handleSubmit}>
-          <label for="prompts">Choose a Type:</label>
+        <form>
+          <label form="prompts">Choose a Type:</label>
           <select value={this.state.value} onChange={this.handleChange}>
+          <option value="">Choose an option</option>
             <option value="multipleChoice">Multiple Choice</option>
             <option value="thumbsChoice">Thumbs Choice</option>
             <option value="questionsPrompt">Any Questions?</option>
           </select>
-          <input type="submit" value="Submit" />
+          <input onSumbit={this.handleSubmit} type="submit" value="Submit" />
         </form>
+          { option }
         {/* listener for what is chosen. A switchcase for what is chosen.
 Appropriate component is populated */}
       </div>
@@ -47,3 +57,5 @@ Appropriate component is populated */}
 }
 
 export default QuestionSwitch;
+
+// components

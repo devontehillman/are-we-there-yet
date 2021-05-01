@@ -1,0 +1,54 @@
+.navbar-inverse {
+    background-color: #27603C;
+}
+
+.welcome {
+    text-align: center;
+    font-size: 26px;
+}
+
+.recaps {
+    text-align: center;
+    font-size: 26px;
+    padding-top: 80px;
+}
+
+.welcomelogo{
+height: 350px;
+width: 600px;
+}
+
+.glyphicon-user{
+    color: black;
+}
+
+.glyphicon-log-in {
+    color: black;
+}
+
+.sign-login{
+color: black;
+}
+
+footer{
+    padding: 20px;
+    background-color: #27603C; 
+    position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+}
+
+.AWTY{
+    font-size: 42px;
+    float: left;
+    color: black;
+}
+
+.login{
+    text-align: center;
+}
+
+.signup{
+    text-align: center;
+}

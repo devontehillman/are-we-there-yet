@@ -18,7 +18,7 @@ function App (){
     // <NavBar />
     // <Switch>
     //         <Route path="/" exact component={Welcome}/>
-
+    //          <Route path="/login" exact component={Login}/>
     // </Switch>
     // </div>
     // </Router>

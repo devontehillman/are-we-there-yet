@@ -12,10 +12,10 @@ function NavBar() {
           <img src="images/AWtY.png" alt="Are We There Yet logo" style= {{width: "200px", height: "100px"}} />
         </div>
         <ul className="nav navbar-nav">
-          <li className="active"><a href="#">Home</a></li>
+          <li className="active"><a href="./">Home</a></li>
         </ul>
-        <Nav.Link href="/signUp.html" class="sign-login"><span class="glyphicon glyphicon-user"></span> Sign Up</Nav.Link>
-          <Nav.Link href="/Login.html" class="sign-login"><span class="glyphicon glyphicon-log-in"></span> Login</Nav.Link>
+        <Nav.Link href="./signUp" class="sign-login"><span class="glyphicon glyphicon-user"></span> Sign Up</Nav.Link>
+          <Nav.Link href="./Login" class="sign-login"><span class="glyphicon glyphicon-log-in"></span> Login</Nav.Link>
    
         </Container>
       </Nav>

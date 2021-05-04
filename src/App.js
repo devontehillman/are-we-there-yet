@@ -3,6 +3,7 @@ import { Render } from 'react-dom';
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom"
 import NavBar from "./Components/Navbar"
 import Welcome from "./Components/Welcome"
+import Login from "./pages/login"
 
 function App (){
     return(
@@ -16,7 +17,7 @@ function App (){
     // <NavBar />
     // <Switch>
     //         <Route path="/" exact component={Welcome}/>
-
+    //          <Route path="/login" exact component={Login}/>
     // </Switch>
     // </div>
     // </Router>

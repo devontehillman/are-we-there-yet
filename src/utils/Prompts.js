@@ -1,6 +1,6 @@
 
-   function multipleChoice();
+   // function multipleChoice();
 
-   function thumbsChoice();
+   // function thumbsChoice();
 
-   function questionsPrompt();
+   // function questionsPrompt();

@@ -7,6 +7,7 @@ import NavBar from "./Components/Navbar"
 import Welcome from "./pages/welcome"
 import Login from "./pages/login"
 import SignUp from "./pages/signup"
+import InstructorTopicPage from "./pages/instructorTopicPage"
 
 function App (){
     return(
@@ -17,6 +18,7 @@ function App (){
         <Route path="/" exact component={Welcome}/>
         <Route path="/login" exact component={Login}/>
         <Route path="/signup" exact component={SignUp}/>
+        <Route path="/topiclist" exact component={InstructorTopicPage}/>
     </Switch>
     </div>
     </Router>

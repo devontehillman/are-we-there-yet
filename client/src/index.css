@@ -1,14 +1,75 @@
-body {
-  margin: 0;
-  padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.nav {
+  background-color: #27603C;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+.welcome {
+  text-align: center;
+  font-size: 26px;
+}
+
+.recaps {
+  text-align: center;
+  font-size: 26px;
+  padding-top: 80px;
+}
+
+.welcomelogo{
+height: 350px;
+width: 600px;
+}
+
+.glyphicon-user{
+  color: black;
+}
+
+.glyphicon-log-in {
+  color: black;
+}
+
+.sign-login{
+color: black;
+}
+
+footer{
+  padding: 20px;
+  background-color: #27603C; 
+  position: fixed;
+ left: 0;
+ bottom: 0;
+ width: 100%;
+}
+
+.AWTY{
+  font-size: 42px;
+  float: left;
+  color: black;
+}
+
+.login{
+  text-align: center;
+}
+
+.signup{
+  text-align: center;
+}
+
+.TopicBig{
+  text-align: center;
+  font-size: 42px;
+}
+
+.Topic{
+  text-align: center;
+  border: black;
+  border-style: solid;
+}
+
+p{
+  font-size: 24px;
+  text-align: center;
+}
+
+.btn-group{
+text-align: center;
+padding-bottom: 40px;
 }

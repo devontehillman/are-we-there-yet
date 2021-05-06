@@ -4,7 +4,6 @@ import TopicList from '../Components/TopicList'
 function InstructorTopicPage() {
     return (
         <div>
-            
             <TopicList />
         </div>
     )

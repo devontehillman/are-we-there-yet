@@ -9,9 +9,8 @@ import store from "./store";
 
 import Navbar from "./components/layout/Navbar";
 // change to welcome page
-import Landing from "./components/layout/Landing";
-// change to sign up 
-import Register from "./components/auth/Register";
+import Welcome from "./components/layout/Welcome";
+import Signup from "./components/auth/Signup";
 import Login from "./components/auth/Login";
 import PrivateRoute from "./components/private-route/PrivateRoute";
 import Dashboard from "./components/dashboard/Dashboard";
@@ -44,8 +43,8 @@ class App extends Component {
         <Router>
           <div className="App">
             <Navbar />
-            <Route exact path="/" component={Landing} />
-            <Route exact path="/register" component={Register} />
+            <Route exact path="/" component={Welcome} />
+            <Route exact path="/signup" component={Signup} />
             <Route exact path="/login" component={Login} />
             <Switch>
               {/* these are the route that can only be accessed by users */}

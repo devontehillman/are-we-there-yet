@@ -5,11 +5,14 @@ import { connect } from "react-redux";
 import { registerUser } from "../../actions/authActions";
 import classnames from "classnames";
 
+import Container from "react-bootstrap/Container"
+
 class Register extends Component {
   constructor() {
     super();
     this.state = {
-      name: "",
+      firstname: "",
+      lastname: "",
       email: "",
       password: "",
       password2: "",
@@ -23,7 +26,7 @@ class Register extends Component {
       this.props.history.push("/dashboard");
     }
   }
-
+  // required if you want to update the state values with new props values
   componentWillReceiveProps(nextProps) {
     if (nextProps.errors) {
       this.setState({
@@ -40,12 +43,13 @@ class Register extends Component {
     e.preventDefault();
 
     const newUser = {
-      name: this.state.name,
+      firstname: this.state.firstname,
+      lastname: this.state.lastname,
       email: this.state.email,
       password: this.state.password,
       password2: this.state.password2
     };
-
+    //console.log(newUser);
     this.props.registerUser(newUser, this.props.history);
   };
 
@@ -53,16 +57,12 @@ class Register extends Component {
     const { errors } = this.state;
 
     return (
-      <div className="container">
+      <Container>
         <div className="row">
           <div className="col s8 offset-s2">
-            <Link to="/" className="btn-flat waves-effect">
-              <i className="material-icons left">keyboard_backspace</i> Back to
-              home
-            </Link>
-            <div className="col s12" style={{ paddingLeft: "11.250px" }}>
+            <div className="col s12" style={{textAlign: "center"}}>
               <h4>
-                <b>Register</b> below
+                <b>Sign up</b> below
               </h4>
               <p className="grey-text text-darken-1">
                 Already have an account? <Link to="/login">Log in</Link>
@@ -72,16 +72,30 @@ class Register extends Component {
               <div className="input-field col s12">
                 <input
                   onChange={this.onChange}
-                  value={this.state.name}
-                  error={errors.name}
-                  id="name"
+                  value={this.state.firstname}
+                  error={errors.firstname}
+                  id="firstname"
                   type="text"
                   className={classnames("", {
-                    invalid: errors.name
+                    invalid: errors.firstname
                   })}
                 />
-                <label htmlFor="name">Name</label>
-                <span className="red-text">{errors.name}</span>
+                <label htmlFor="name">First Name</label>
+                <span className="red-text">{errors.firstname}</span>
+              </div>
+              <div className="input-field col s12">
+                <input
+                  onChange={this.onChange}
+                  value={this.state.lastname}
+                  error={errors.lastname}
+                  id="lastname"
+                  type="text"
+                  className={classnames("", {
+                    invalid: errors.lastname
+                  })}
+                />
+                <label htmlFor="name">Last Name</label>
+                <span className="red-text">{errors.lastname}</span>
               </div>
               <div className="input-field col s12">
                 <input
@@ -142,7 +156,7 @@ class Register extends Component {
             </form>
           </div>
         </div>
-      </div>
+      </Container>
     );
   }
 }

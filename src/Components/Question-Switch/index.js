@@ -2,7 +2,9 @@ import React from "react";
 import MultiButton from "../MultiButton";
 import ThumbButton from "../ThumbButton";
 import AnyQuestions from "../AnyQuestions";
-import TopicChoice from "../TopicChoice";
+// import TopicChoice from "../TopicChoice";
+import API from "../../utils/API";
+import App from "../../App";
 // import chart
 
 class QuestionSwitch extends React.Component {
@@ -20,6 +22,13 @@ class QuestionSwitch extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    console.log(this.state.value);
+    // API.saveTopic({
+    //   // userID is a placeholder and needs to be updated to grab the user id from a global state
+    //   userID: "2",
+    //   topic: topic.value,
+    //   questionType: this.state.value,
+    // });
   }
 
   render() {
@@ -37,8 +46,12 @@ class QuestionSwitch extends React.Component {
     return (
       <div>
         <h3>Understanding/Comfort</h3>
-        <TopicChoice />
-        <form>
+        <input
+          id="topic"
+          className="questionName"
+          placeholder="Input Topic Here"
+        ></input>
+        <form onSubmit={this.handleSubmit}>
           <label form="prompts">Choose a Type:</label>
           <select value={this.state.value} onChange={this.handleChange}>
             <option value="">Choose an option</option>
@@ -46,7 +59,7 @@ class QuestionSwitch extends React.Component {
             <option value="thumbsChoice">Thumbs Choice</option>
             <option value="questionsPrompt">Any Questions?</option>
           </select>
-          <input onSumbit={this.handleSubmit} type="submit" value="Submit" />
+          <input type="submit" value="Submit" />
         </form>
         {option}
         {/* listener for what is chosen. A switchcase for what is chosen.

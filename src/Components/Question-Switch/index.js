@@ -4,14 +4,22 @@ import ThumbButton from "../ThumbButton";
 import AnyQuestions from "../AnyQuestions";
 // import TopicChoice from "../TopicChoice";
 import API from "../../utils/API";
-import App from "../../App";
+// import App from "../../App";
 // import chart
 
 class QuestionSwitch extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { value: "" };
+    this.state = 
+    { 
+      // prompt: 
+      // { 
+        value: "",
+        topic: "" 
+      // }
+    };
 
+    this.topicChange = this.topicChange.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -20,15 +28,33 @@ class QuestionSwitch extends React.Component {
     this.setState({ value: e.target.value });
   }
 
+  topicChange = e => {
+    this.setState({ topic: e.target.value });
+  };
+
+
+//   topicChange(e) {
+//     const topic = e.target.value
+//     this.setState(function(state) {
+//       return { 
+//         details: Object.assign({}, 
+//           state.prompt, {
+//           topic: topic 
+//   })
+// }
+// }
+// )};
+
   handleSubmit(e) {
     e.preventDefault();
     console.log(this.state.value);
-    // API.saveTopic({
-    //   // userID is a placeholder and needs to be updated to grab the user id from a global state
-    //   userID: "2",
-    //   topic: topic.value,
-    //   questionType: this.state.value,
-    // });
+    console.log(this.state.topic);
+    API.saveTopic({
+      // userID is a placeholder and needs to be updated to grab the user id from a global state
+      // userID: req.user.id
+      topic: this.state.topic,
+      questionType: this.state.value,
+    });
   }
 
   render() {
@@ -46,11 +72,6 @@ class QuestionSwitch extends React.Component {
     return (
       <div>
         <h3>Understanding/Comfort</h3>
-        <input
-          id="topic"
-          className="questionName"
-          placeholder="Input Topic Here"
-        ></input>
         <form onSubmit={this.handleSubmit}>
           <label form="prompts">Choose a Type:</label>
           <select value={this.state.value} onChange={this.handleChange}>
@@ -60,6 +81,13 @@ class QuestionSwitch extends React.Component {
             <option value="questionsPrompt">Any Questions?</option>
           </select>
           <input type="submit" value="Submit" />
+          <input
+          id="topic"
+          className="questionName"
+          placeholder="Input Topic Here"
+          onChange={this.topicChange}
+          value={this.state.topic}
+        ></input>
         </form>
         {option}
         {/* listener for what is chosen. A switchcase for what is chosen.

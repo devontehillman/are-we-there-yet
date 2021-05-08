@@ -11,12 +11,12 @@ import API from "../../utils/API";
 class QuestionSwitch extends React.Component {
   constructor(props) {
     super(props);
-    this.state = 
-    { 
+    this.state =
+    {
       // prompt: 
       // { 
-        value: "",
-        topic: "" 
+      value: "",
+      topic: ""
       // }
     };
 
@@ -33,17 +33,17 @@ class QuestionSwitch extends React.Component {
   };
 
 
-//   topicChange(e) {
-//     const topic = e.target.value
-//     this.setState(function(state) {
-//       return { 
-//         details: Object.assign({}, 
-//           state.prompt, {
-//           topic: topic 
-//   })
-// }
-// }
-// )};
+  //   topicChange(e) {
+  //     const topic = e.target.value
+  //     this.setState(function(state) {
+  //       return { 
+  //         details: Object.assign({}, 
+  //           state.prompt, {
+  //           topic: topic 
+  //   })
+  // }
+  // }
+  // )};
 
   handleSubmit(e) {
     e.preventDefault();
@@ -61,7 +61,7 @@ class QuestionSwitch extends React.Component {
     console.log(this.state.value);
     let option;
 
-       <option value="">Choose an option</option>
+    <option value="">Choose an option</option>
     if (this.state.value === "multipleChoice") {
       option = <MultiButton />;
     } else if (this.state.value === "thumbsChoice") {
@@ -72,30 +72,30 @@ class QuestionSwitch extends React.Component {
 
     return (
       <div>
-               <Container>
-        <h3>Understanding/Comfort</h3>
-        <form onSubmit={this.handleSubmit}>
-          <label form="prompts">Choose a Type:</label>
-          <select value={this.state.value} onChange={this.handleChange}>
-            <option value="">Choose an option</option>
-            <option value="multipleChoice">Multiple Choice</option>
-            <option value="thumbsChoice">Thumbs Choice</option>
-            <option value="questionsPrompt">Any Questions?</option>
-          </select>
+        <Container>
+          <h3>Understanding/Comfort</h3>
+          <form onSubmit={this.handleSubmit}>
+            <label form="prompts">Choose a Type:</label>
+            <select value={this.state.value} onChange={this.handleChange}>
+              <option value="">Choose an option</option>
+              <option value="multipleChoice">Multiple Choice</option>
+              <option value="thumbsChoice">Thumbs Choice</option>
+              <option value="questionsPrompt">Any Questions?</option>
+            </select>
 
-          <input type="submit" value="Submit" />
-          <input
-          id="topic"
-          className="questionName"
-          placeholder="Input Topic Here"
-          onChange={this.topicChange}
-          value={this.state.topic}
-        ></input>
-        </form>
-        {option}
-        {/* listener for what is chosen. A switchcase for what is chosen.
+            <input type="submit" value="Submit" />
+            <input
+              id="topic"
+              className="questionName"
+              placeholder="Input Topic Here"
+              onChange={this.topicChange}
+              value={this.state.topic}
+            ></input>
+          </form>
+          {option}
+          {/* listener for what is chosen. A switchcase for what is chosen.
 Appropriate component is populated */}
-      </Container>
+        </Container>
 
       </div>
     );

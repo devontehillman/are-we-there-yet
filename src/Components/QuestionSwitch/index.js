@@ -10,12 +10,11 @@ import API from "../../utils/API";
 class QuestionSwitch extends React.Component {
   constructor(props) {
     super(props);
-    this.state = 
-    { 
-      // prompt: 
-      // { 
-        value: "",
-        topic: "" 
+    this.state = {
+      // prompt:
+      // {
+      value: "",
+      topic: "",
       // }
     };
 
@@ -28,22 +27,21 @@ class QuestionSwitch extends React.Component {
     this.setState({ value: e.target.value });
   }
 
-  topicChange = e => {
+  topicChange = (e) => {
     this.setState({ topic: e.target.value });
   };
 
-
-//   topicChange(e) {
-//     const topic = e.target.value
-//     this.setState(function(state) {
-//       return { 
-//         details: Object.assign({}, 
-//           state.prompt, {
-//           topic: topic 
-//   })
-// }
-// }
-// )};
+  //   topicChange(e) {
+  //     const topic = e.target.value
+  //     this.setState(function(state) {
+  //       return {
+  //         details: Object.assign({},
+  //           state.prompt, {
+  //           topic: topic
+  //   })
+  // }
+  // }
+  // )};
 
   handleSubmit(e) {
     e.preventDefault();
@@ -82,12 +80,12 @@ class QuestionSwitch extends React.Component {
           </select>
           <input type="submit" value="Submit" />
           <input
-          id="topic"
-          className="questionName"
-          placeholder="Input Topic Here"
-          onChange={this.topicChange}
-          value={this.state.topic}
-        ></input>
+            id="topic"
+            className="questionName"
+            placeholder="Input Topic Here"
+            onChange={this.topicChange}
+            value={this.state.topic}
+          ></input>
         </form>
         {option}
         {/* listener for what is chosen. A switchcase for what is chosen.
@@ -98,5 +96,3 @@ Appropriate component is populated */}
 }
 
 export default QuestionSwitch;
-
-// components

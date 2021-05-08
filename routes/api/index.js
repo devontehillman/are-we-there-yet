@@ -2,8 +2,8 @@ const router = require("express").Router();
 const topicRoutes = require("./topic");
 const responseRoutes = require("./response");
 
-// Book routes
-router.use("/topics", topicRoutes);
-router.use("/responses", responseRoutes);
+router.use("/topic", topicRoutes);
+// router.use("/responses", responseRoutes);
+router.get("/test", () => {console.log("hello")});
 
 module.exports = router;

@@ -1,5 +1,5 @@
 module.exports = {
-    // Prompt: require("./prompt"),
-    // Response: require("./response"),
-    User: require("./user")
+    Response: require("./response"),
+    User: require("./user"),
+    Topic: require("./topic")
   };

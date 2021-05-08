@@ -2,6 +2,7 @@ import React from "react";
 import MultiButton from "../MultiButton";
 import ThumbButton from "../ThumbButton";
 import AnyQuestions from "../AnyQuestions";
+import Container from "react-bootstrap/Container"
 // import chart
 
 class QuestionSwitch extends React.Component {
@@ -35,7 +36,11 @@ class QuestionSwitch extends React.Component {
       
     return (
       <div>
+         <Container>
+           <div className="row">
+           <div className="col-6">
         <input className="questionName"></input>
+        </div></div>
         <h3>Understanding/Comfort</h3>
 
         <form>
@@ -51,6 +56,7 @@ class QuestionSwitch extends React.Component {
           { option }
         {/* listener for what is chosen. A switchcase for what is chosen.
 Appropriate component is populated */}
+</Container>
       </div>
     );
   }

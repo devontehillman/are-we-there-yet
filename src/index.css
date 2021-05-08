@@ -1,5 +1,28 @@
-.nav {
-    background-color: #27603C;
+.NavBar {
+    background-color: #27603C; 
+}
+ 
+.selection{
+    color: white;
+    float: right;
+    text-align: right;
+   font-size: 18px;
+   font-weight: 700;
+}
+
+.glyphicon-log-in {
+    color: black;
+    padding-right: 6px;
+}
+
+.glyphicon-user {
+    color: black;
+    padding-right: 6px;
+}
+
+.glyphicon-home{
+    color: black;
+    padding-right: 6px;
 }
 
 .welcome {
@@ -14,20 +37,23 @@
 }
 
 .welcomelogo{
-height: 350px;
-width: 600px;
+height: 200px;
+width: 400px;
+display: block;
+margin-left: auto;
+margin-right: auto;
 }
 
-.glyphicon-user{
-    color: black;
-}
+.cornerlogo{
+    height: 100px;
+    width: 200px;
+    float: left;
 
-.glyphicon-log-in {
-    color: black;
 }
 
 .sign-login{
 color: black;
+float: right;
 }
 
 footer{
@@ -53,15 +79,12 @@ footer{
     text-align: center;
 }
 
-.TopicBig{
-    text-align: center;
-    font-size: 42px;
+.questionName{
+text-align: center;
 }
 
-.Topic{
-    text-align: center;
-    border: black;
-    border-style: solid;
+h3 {
+text-align: center;
 }
 
 p{

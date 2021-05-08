@@ -35,7 +35,7 @@ render() {
     return (
         <div>
         <form onSubmit={this.onSubmit} className="login">
-                <div action="/action_page.php" class="signup">
+                <div action="/action_page.php" className="signup">
                     <label  htmlFor="Fname" onChange={this.handleChange} >
                         First name:
                       

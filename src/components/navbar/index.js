@@ -27,11 +27,18 @@ function Header() {
           <img src="images/AWtY.png" alt="Are We There Yet logo" style= {{width: "200px", height: "100px"}} />
         </div>
         <ul className="nav navbar-nav">
+<<<<<<< HEAD
         
           <li className="active"><a href="./">Home</a></li><span className="glyphicon glyphicon-home"></span>
           </ul>
         <Nav.Link href="./signUp" className="sign-login"><span className="glyphicon glyphicon-user"></span> Sign Up</Nav.Link>
           <Nav.Link href="./Login" className="sign-login"><span className="glyphicon glyphicon-log-in"></span> Login</Nav.Link>
+=======
+          <li className="active"><a href="./">Home</a></li>
+        </ul>
+        <Nav.Link href="./signUp" class="sign-login"><span class="glyphicon glyphicon-user"></span> Sign Up</Nav.Link>
+          <Nav.Link href="./login" class="sign-login"><span class="glyphicon glyphicon-log-in"></span> Login</Nav.Link>
+>>>>>>> ed9876a41e557cbbe785b0f0a219f2f1fa42c0be
    
         </Container>
       </Nav> */}

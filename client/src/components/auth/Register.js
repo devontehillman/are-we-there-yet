@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 import { registerUser } from "../../actions/authActions";
 import classnames from "classnames";
 
-import Container from "react-bootstrap/Container"
+//import Container from "react-bootstrap/Container"
 
 class Register extends Component {
   constructor() {
@@ -57,7 +57,7 @@ class Register extends Component {
     const { errors } = this.state;
 
     return (
-      <Container>
+      <div className="container">
         <div className="row">
           <div className="col s8 offset-s2">
             <div className="col s12" style={{textAlign: "center"}}>
@@ -156,7 +156,7 @@ class Register extends Component {
             </form>
           </div>
         </div>
-      </Container>
+        </div>
     );
   }
 }

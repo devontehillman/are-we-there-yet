@@ -17,13 +17,11 @@ const User = require("../../models/User");
 // @access Public
 router.post("/register", (req, res) => {
   // Form validation
-  console.log('attempting to add new user...')
-  console.log(req.body)
+
   const { errors, isValid } = validateRegisterInput(req.body);
-  console.log(isValid)
+
   // Check validation
   if (!isValid) {
-    console.log('Error with validation')
     return res.status(400).json(errors);
   }
 
@@ -31,15 +29,13 @@ router.post("/register", (req, res) => {
     if (user) {
       return res.status(400).json({ email: "Email already exists" });
     } else {
-      console.log('creating new user')
       const newUser = new User({
         firstname: req.body.firstname,
         lastname: req.body.lastname,
         email: req.body.email,
         password: req.body.password
       });
-      console.log(newUser);
-      console.log('attempting to add new user in api route')
+
       // Hash password before saving in database
       bcrypt.genSalt(10, (err, salt) => {
         bcrypt.hash(newUser.password, salt, (err, hash) => {
@@ -48,7 +44,7 @@ router.post("/register", (req, res) => {
           newUser
             .save()
             .then(user => res.json(user))
-            .catch(err => console.log('an error occured'));
+            .catch(err => console.log(err));
         });
       });
     }
@@ -85,7 +81,7 @@ router.post("/login", (req, res) => {
         // Create JWT Payload
         const payload = {
           id: user.id,
-          firstname: user.firstname
+          name: user.firstname
         };
 
         // Sign token

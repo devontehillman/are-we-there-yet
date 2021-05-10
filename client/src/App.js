@@ -10,7 +10,8 @@ import store from "./store";
 import Navbar from "./components/layout/Navbar";
 // change to welcome page
 import Welcome from "./components/layout/Welcome";
-import Signup from "./components/auth/Signup";
+// change to sign up 
+import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
 import PrivateRoute from "./components/private-route/PrivateRoute";
 import Dashboard from "./components/dashboard/Dashboard";
@@ -24,6 +25,8 @@ if (localStorage.jwtToken) {
   setAuthToken(token);
   // Decode token and get user info and exp
   const decoded = jwt_decode(token);
+  console.log('dh1') 
+  console.log(token)
   // Set user and isAuthenticated
   store.dispatch(setCurrentUser(decoded));
   // Check for expired token
@@ -44,7 +47,7 @@ class App extends Component {
           <div className="App">
             <Navbar />
             <Route exact path="/" component={Welcome} />
-            <Route exact path="/signup" component={Signup} />
+            <Route exact path="/register" component={Register} />
             <Route exact path="/login" component={Login} />
             <Switch>
               {/* these are the route that can only be accessed by users */}

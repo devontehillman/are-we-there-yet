@@ -13,7 +13,7 @@ class Navbar extends Component {
          <ul className="nav navbar-nav">
            <li className="active"><a href="./">Home</a></li>
          </ul>
-         <Nav.Link href="./signUp" class="sign-login"><span class="glyphicon glyphicon-user"></span> Sign Up</Nav.Link>
+         <Nav.Link href="./register" class="sign-login"><span class="glyphicon glyphicon-user"></span> Sign Up</Nav.Link>
            <Nav.Link href="./login" class="sign-login"><span class="glyphicon glyphicon-log-in"></span> Login</Nav.Link>
     
          </Container>
@@ -23,3 +23,4 @@ class Navbar extends Component {
 }
 
 export default Navbar;
+

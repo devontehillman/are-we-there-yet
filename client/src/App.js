@@ -14,7 +14,10 @@ import Welcome from "./components/layout/Welcome";
 import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
 import PrivateRoute from "./components/private-route/PrivateRoute";
+
 import Dashboard from "./components/dashboard/Dashboard";
+import Topiclist from "./components/topiclist/Topiclist"
+
 
 import "./App.css";
 
@@ -52,6 +55,9 @@ class App extends Component {
             <Switch>
               {/* these are the route that can only be accessed by users */}
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
+              <PrivateRoute exact path="/topiclist" component={Topiclist} />
+              {/* one for the question switch */}
+              <PrivateRoute exact path="/topiclist" component={Topiclist} />
             </Switch>
           </div>
         </Router>

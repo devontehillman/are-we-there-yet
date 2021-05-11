@@ -1,11 +1,13 @@
 const router = require("express").Router();
-const responseController = require("../../controllers/ResponseController");
+const responseController = require("../../controllers/ResposneController");
 
-router.route("/").get(topicController.findAll).post(topicController.create);
+router
+  .route("/")
+  .get(responseController.findAll)
+  .post(responseController.create);
 
 router
   .route("/:id")
-  .get(topicController.findById)
-  .delete(topicController.remove);
+  .get(responseController.findById)
 
 module.exports = router;

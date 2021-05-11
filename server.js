@@ -1,5 +1,4 @@
 const express = require("express");
-<<<<<<< HEAD
 
 const mongoose = require("mongoose");
 const routes = require("./routes");
@@ -27,45 +26,3 @@ app.listen(PORT, function() {
 });
 
 // "start": "react-scripts start",
-=======
-const mongoose = require("mongoose");
-const bodyParser = require("body-parser");
-const passport = require("passport");
-
-const users = require("./routes/api/users");
-
-const app = express();
-
-// Bodyparser middleware
-app.use(
-  bodyParser.urlencoded({
-    extended: false
-  })
-);
-app.use(bodyParser.json());
-
-// DB Config
-const db = require("./config/keys").mongoURI;
-
-// Connect to MongoDB
-mongoose
-  .connect(
-    db,
-    { useNewUrlParser: true }
-  )
-  .then(() => console.log("MongoDB successfully connected"))
-  .catch(err => console.log(err));
-
-// Passport middleware
-app.use(passport.initialize());
-
-// Passport config
-require("./config/passport")(passport);
-
-// Routes
-app.use("/api/users", users);
-
-const port = process.env.PORT || 5000;
-
-app.listen(port, () => console.log(`Server up and running on port ${port} !`));
->>>>>>> ed9876a41e557cbbe785b0f0a219f2f1fa42c0be

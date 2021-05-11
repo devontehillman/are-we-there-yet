@@ -2,14 +2,10 @@ import React from "react";
 import MultiButton from "../MultiButton";
 import ThumbButton from "../ThumbButton";
 import AnyQuestions from "../AnyQuestions";
-import Container from "react-bootstrap/Container";
-import StudentPromtView from "../StudentPromptView";
-// import TopicChoice from "../TopicChoice";
 import API from "../../utils/API";
-// import App from "../../App";
-// import chart
+import Container from "react-bootstrap/Container";
 
-class QuestionSwitch extends React.Component {
+class StudentPromtView extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -32,27 +28,11 @@ class QuestionSwitch extends React.Component {
     this.setState({ topic: e.target.value });
   };
 
-  //   topicChange(e) {
-  //     const topic = e.target.value
-  //     this.setState(function(state) {
-  //       return {
-  //         details: Object.assign({},
-  //           state.prompt, {
-  //           topic: topic
-  //   })
-  // }
-  // }
-  // )};
-
   handleSubmit(e) {
     e.preventDefault();
-    console.log(this.state.value);
-    console.log(this.state.topic);
-    API.saveTopic({
+    API.getTopics({
       // userID is a placeholder and needs to be updated to grab the user id from a global state
       // userID: req.user.id
-      topic: this.state.topic,
-      questionType: this.state.value,
     });
   }
 
@@ -75,29 +55,20 @@ class QuestionSwitch extends React.Component {
           <h3>Understanding/Comfort</h3>
           <form onSubmit={this.handleSubmit}>
             <label form="prompts">Choose a Type:</label>
-            <select value={this.state.value} onChange={this.handleChange}>
+            <select>
               <option value="">Choose an option</option>
               <option value="multipleChoice">Multiple Choice</option>
               <option value="thumbsChoice">Thumbs Choice</option>
               <option value="questionsPrompt">Any Questions?</option>
             </select>
-
             <input type="submit" value="Submit" />
-            <input
-              id="topic"
-              className="questionName"
-              placeholder="Input Topic Here"
-              onChange={this.topicChange}
-              value={this.state.topic}
-            ></input>
           </form>
           {option}
           {/* listener for what is chosen. A switchcase for what is chosen.
-Appropriate component is populated */}
+    Appropriate component is populated */}
         </Container>
       </div>
     );
   }
 }
-
-export default QuestionSwitch;
+export default StudentPromtView;

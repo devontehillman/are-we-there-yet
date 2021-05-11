@@ -10,7 +10,6 @@
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.3",
     "bootstrap": "^4.6.0",
-    "concurrently": "^4.0.1",
     "express": "^4.16.4",
     "is-empty": "^1.2.0",
     "jsonwebtoken": "^8.3.0",
@@ -23,7 +22,14 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
     "validator": "^10.9.0",
-    "web-vitals": "^1.1.1"
+    "web-vitals": "^1.1.1",
+    "babel-eslint": "9.0.0",
+    "babel-jest": "23.6.0",
+    "babel-loader": "8.0.4",
+    "eslint": "5.6.0",
+    "jest": "23.6.0",
+    "webpack": "4.19.1",
+    "webpack-dev-server": "3.1.9"
   },
   "scripts": {
     "start": "node server.js",
@@ -45,5 +51,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "concurrently": "^4.1.2"
   }
 }

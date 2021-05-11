@@ -5,8 +5,10 @@ import NavBar from "./Components/Navbar";
 import Welcome from "./pages/welcome";
 import Login from "./pages/login";
 import SignUp from "./pages/signup";
-import QuestionSwitch from "./Components/QuestionSwitch";
+import InstructorTopicPage from "./pages/instructorTopicPage"
+// import QuestionSwitch from "./Components/QuestionSwitch";
 import StudentPromptView from "./Components/StudentPromptView";
+
 function App() {
   return (
     <Router>
@@ -16,7 +18,7 @@ function App() {
           <Route path="/" exact component={Welcome} />
           <Route path="/login" exact component={Login} />
           <Route path="/signup" exact component={SignUp} />
-          <Route path="/topic" exact component={QuestionSwitch} />
+          <Route path="/topiclist" exact component={InstructorTopicPage}/>
           <Route path="/stuff" exact component={StudentPromptView} />
         </Switch>
       </div>

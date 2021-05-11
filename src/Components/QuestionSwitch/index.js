@@ -2,7 +2,8 @@ import React from "react";
 import MultiButton from "../MultiButton";
 import ThumbButton from "../ThumbButton";
 import AnyQuestions from "../AnyQuestions";
-import Container from "react-bootstrap/Container"
+import Container from "react-bootstrap/Container";
+import StudentPromtView from "../StudentPromptView";
 // import TopicChoice from "../TopicChoice";
 import API from "../../utils/API";
 // import App from "../../App";
@@ -11,12 +12,11 @@ import API from "../../utils/API";
 class QuestionSwitch extends React.Component {
   constructor(props) {
     super(props);
-    this.state =
-    {
-      // prompt: 
-      // { 
+    this.state = {
+      // prompt:
+      // {
       value: "",
-      topic: ""
+      topic: "",
       // }
     };
 
@@ -28,18 +28,17 @@ class QuestionSwitch extends React.Component {
   handleChange(e) {
     this.setState({ value: e.target.value });
   }
-  topicChange = e => {
+  topicChange = (e) => {
     this.setState({ topic: e.target.value });
   };
-
 
   //   topicChange(e) {
   //     const topic = e.target.value
   //     this.setState(function(state) {
-  //       return { 
-  //         details: Object.assign({}, 
+  //       return {
+  //         details: Object.assign({},
   //           state.prompt, {
-  //           topic: topic 
+  //           topic: topic
   //   })
   // }
   // }
@@ -61,7 +60,7 @@ class QuestionSwitch extends React.Component {
     console.log(this.state.value);
     let option;
 
-    <option value="">Choose an option</option>
+    <option value="">Choose an option</option>;
     if (this.state.value === "multipleChoice") {
       option = <MultiButton />;
     } else if (this.state.value === "thumbsChoice") {
@@ -96,7 +95,6 @@ class QuestionSwitch extends React.Component {
           {/* listener for what is chosen. A switchcase for what is chosen.
 Appropriate component is populated */}
         </Container>
-
       </div>
     );
   }

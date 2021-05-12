@@ -7,16 +7,18 @@ import { setCurrentUser, logoutUser } from "./actions/authActions";
 import { Provider } from "react-redux";
 import store from "./store";
 
-import Navbar from "./components/layout/Navbar";
+import Navbar from "./Components/layout/Navbar";
 // change to welcome page
-import Welcome from "./components/layout/Welcome";
+import Welcome from "./Components/layout/Welcome";
 // change to sign up 
-import Register from "./components/auth/Register";
-import Login from "./components/auth/Login";
-import PrivateRoute from "./components/private-route/PrivateRoute";
+import Dashboard from "./Components/dashboard/Dashboard";
+import Register from "./Components/auth/Register";
+import Login from "./Components/auth/Login";
 
-import Dashboard from "./components/dashboard/Dashboard";
-import Topiclist from "./components/topiclist/Topiclist"
+import PrivateRoute from "./Components/private-route/PrivateRoute";
+import InstructorTopicPage from "./pages/instructorTopicPage"
+import QuestionSwitch from "./Components/QuestionSwitch";
+import StudentPromptView from "./Components/StudentPromptView";
 
 
 import "./App.css";
@@ -52,12 +54,13 @@ class App extends Component {
             <Route exact path="/" component={Welcome} />
             <Route exact path="/register" component={Register} />
             <Route exact path="/login" component={Login} />
+            
             <Switch>
               {/* these are the route that can only be accessed by users */}
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
-              <PrivateRoute exact path="/topiclist" component={Topiclist} />
-              {/* one for the question switch */}
-              <PrivateRoute exact path="/topiclist" component={Topiclist} />
+              <PrivateRoute path="/topiclist" exact component={InstructorTopicPage}/>
+              <PrivateRoute exact path="/addtopic" component={QuestionSwitch} />
+              <PrivateRoute exact path="/viewtopics" component={StudentPromptView} />
             </Switch>
           </div>
         </Router>

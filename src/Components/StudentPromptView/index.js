@@ -13,11 +13,16 @@ function StudentPromptView() {
     loadTopics();
   }, []);
 
+  function something(res) {
+    setTopic(res.data[2].topic)
+    setType(res.data[2].questionType)
+  }
+
   function loadTopics() {
     API.getTopics()
-      .then((res) => console.log(res.data))
-      .then((res) => setTopic(res.data.topic))
-      .then((res) => setType(res.data.questionType))
+      .then((res) => something(res))
+      // .then((res) => setTopic(res.data[0].topic))
+      // .then((res) => setType(res.data[0].questionType))
       .catch((err) => console.log(err));
   }
 

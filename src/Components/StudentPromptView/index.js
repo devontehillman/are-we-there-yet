@@ -14,8 +14,8 @@ function StudentPromptView() {
   }, []);
 
   function something(res) {
-    setTopic(res.data[2].topic)
-    setType(res.data[2].questionType)
+    setTopic(res.data[0].topic);
+    setType(res.data[0].questionType);
   }
 
   function loadTopics() {

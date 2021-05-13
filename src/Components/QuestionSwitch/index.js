@@ -60,7 +60,6 @@ class QuestionSwitch extends React.Component {
     console.log(this.state.value);
     let option;
 
-    <option value="">Choose an option</option>;
     if (this.state.value === "multipleChoice") {
       option = <MultiButton />;
     } else if (this.state.value === "thumbsChoice") {

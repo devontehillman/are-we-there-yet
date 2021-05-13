@@ -1,3 +1,4 @@
+/* eslint-disable import/no-anonymous-default-export */
 import axios from "axios";
 
 export default {
@@ -17,9 +18,9 @@ export default {
     return axios.post("/api/topic", topicData);
   },
   saveResponse: function (response) {
-    return axios.post("api/response", response);
+    return axios.post("/api/responses", response);
   },
   getResponses: function (promptid) {
-    return axios.get("/api/response" + promptid);
+    return axios.get("/api/responses" + promptid);
   },
 };

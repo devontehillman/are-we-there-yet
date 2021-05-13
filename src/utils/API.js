@@ -17,7 +17,7 @@ export default {
     return axios.post("/api/topic", topicData);
   },
   saveResponse: function (response) {
-    return axios.post("api/resposnse", response);
+    return axios.post("api/response", response);
   },
   getResponses: function (promptid) {
     return axios.get("/api/response" + promptid);

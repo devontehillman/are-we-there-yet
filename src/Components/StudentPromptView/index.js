@@ -26,12 +26,6 @@ function StudentPromptView() {
       .catch((err) => console.log(err));
   }
 
-  function handleSubmit(e) {
-    e.preventDefault();
-    loadTopics();
-    console.log("Hi!");
-  }
-
   let option;
 
   if (type === "multipleChoice") {
@@ -46,10 +40,10 @@ function StudentPromptView() {
     <div>
       <Container>
         <h3>Press the Button!</h3>
-        <h1>{topic}</h1>
-        <button onClick={handleSubmit}>
+        {/* <button onClick={handleSubmit}>
           <input type="submit" value="Submit" />
-        </button>
+        </button> */}
+        <h1>{topic}</h1>
         {option}
       </Container>
     </div>

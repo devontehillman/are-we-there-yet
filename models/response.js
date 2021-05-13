@@ -8,6 +8,6 @@ const responseSchema = new Schema({
   // promptID: { type: mongoose.Schema.Types.ObjectId, ref: "Prompt" },
 });
 
-const Response = mongoose.model("Prompt", responseSchema);
+const Response = mongoose.model("Response", responseSchema);
 
 module.exports = Response;

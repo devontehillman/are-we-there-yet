@@ -15,6 +15,7 @@ export default {
     },
  
     saveTopic: function(topicData) {
+      console.log("dh1")
       return axios.post("/api/topic", topicData);
     }
   };

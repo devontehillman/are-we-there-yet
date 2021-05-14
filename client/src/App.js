@@ -3,9 +3,11 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import jwt_decode from "jwt-decode";
 import setAuthToken from "./utils/setAuthToken";
 
-import { setCurrentUser, logoutUser } from "./actions/authActions";
+
+// imports state from redux store to be accessed by app 
 import { Provider } from "react-redux";
 import store from "./store";
+import { setCurrentUser, logoutUser } from "./actions/authActions";
 
 import Navbar from "./Components/layout/Navbar";
 // change to welcome page
@@ -30,8 +32,8 @@ if (localStorage.jwtToken) {
   setAuthToken(token);
   // Decode token and get user info and exp
   const decoded = jwt_decode(token);
-  console.log('dh1') 
-  console.log(token)
+  // console.log('dh1') 
+  // console.log(token)
   // Set user and isAuthenticated
   store.dispatch(setCurrentUser(decoded));
   // Check for expired token
@@ -44,6 +46,7 @@ if (localStorage.jwtToken) {
     window.location.href = "./login";
   }
 }
+
 class App extends Component {
   render() {
     return (

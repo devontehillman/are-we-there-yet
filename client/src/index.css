@@ -1,8 +1,14 @@
-.NavBar {
+ .NavBar {
   background-color: #27603C; 
   height: 100px;
 }
 
+.cornerlogo{
+  height: 100px;
+  width: 200px;
+  float: left;
+}
+/*
 .selection{
   color: white;
   float: right;
@@ -45,12 +51,6 @@ margin-left: auto;
 margin-right: auto;
 }
 
-.cornerlogo{
-  height: 100px;
-  width: 200px;
-  float: left;
-
-}
 
 .sign-login{
 color: black;
@@ -96,4 +96,4 @@ p{
 .btn-group{
 text-align: center;
 padding-bottom: 40px;
-}
+} */

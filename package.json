@@ -6,6 +6,7 @@
     "@testing-library/jest-dom": "^5.11.10",
     "@testing-library/react": "^11.2.6",
     "@testing-library/user-event": "^12.8.3",
+    "@types/react-select": "^4.0.15",
     "axios": "^0.21.1",
     "babel-eslint": "9.0.0",
     "babel-jest": "23.6.0",
@@ -38,7 +39,8 @@
     "eject": "react-scripts eject",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "server": "nodemon server.js",
-    "client": "npm start --prefix client"
+    "client": "npm start --prefix client",
+    "seed": "node scripts/seedDB.js"
   },
   "browserslist": {
     "production": [

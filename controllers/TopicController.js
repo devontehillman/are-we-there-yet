@@ -1,24 +1,24 @@
-const db = require("../models");
+const Topic = require("../models/topic");
 
 module.exports = {
   findAll: function (req, res) {
-    db.Topic.find(req.query)
-      .sort({ date: -1 })
+    console.log('dh1')
+    Topic.find(req.query)
       .then((dbModel) => res.json(dbModel))
       .catch((err) => res.status(422).json(err));
   },
   findById: function (req, res) {
-    db.Topic.findById(req.params.id)
+    Topic.findById(req.params.id)
       .then((dbModel) => res.json(dbModel))
       .catch((err) => res.status(422).json(err));
   },
   create: function (req, res) {
-    db.Topic.create(req.body)
+    Topic.create(req.body)
       .then((dbModel) => res.json(dbModel))
       .catch((err) => res.status(422).json(err));
   },
   remove: function (req, res) {
-    db.Topic.findById({ _id: req.params.id })
+    Topic.findById({ _id: req.params.id })
       .then((dbModel) => dbModel.remove())
       .then((dbModel) => res.json(dbModel))
       .catch((err) => res.status(422).json(err));

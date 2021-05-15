@@ -2,8 +2,7 @@ const Topic = require("../models/topic");
 
 module.exports = {
   findAll: function (req, res) {
-    console.log('dh1')
-    Topic.find(req.query)
+      Topic.find(req.query)
       .then((dbModel) => res.json(dbModel))
       .catch((err) => res.status(422).json(err));
   },

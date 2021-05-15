@@ -2,13 +2,10 @@ import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import jwt_decode from "jwt-decode";
 import setAuthToken from "./utils/setAuthToken";
-
-
 // imports state from redux store to be accessed by app 
 import { Provider } from "react-redux";
 import store from "./store";
 import { setCurrentUser, logoutUser } from "./actions/authActions";
-
 import Navbar from "./Components/layout/Navbar";
 // change to welcome page
 import Welcome from "./Components/layout/Welcome";
@@ -16,15 +13,12 @@ import Welcome from "./Components/layout/Welcome";
 import Dashboard from "./Components/Dashboard/Dashboard";
 import Register from "./Components/auth/Register";
 import Login from "./Components/auth/Login";
-
-import PrivateRoute from "./Components/private-route/PrivateRoute";
+import PrivateRoute from "./Components/Private-route/PrivateRoute";
 import InstructorTopicPage from "./pages/instructorTopicPage"
 import QuestionSwitch from "./Components/QuestionSwitch";
 import StudentPromptView from "./Components/StudentPromptView";
 import Fruit from "./Components/Fruit"
-
 import "./App.css";
-
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
   // Set auth token header auth
@@ -41,12 +35,10 @@ if (localStorage.jwtToken) {
   if (decoded.exp < currentTime) {
     // Logout user
     store.dispatch(logoutUser());
-
     // Redirect to login
     window.location.href = "./login";
   }
 }
-
 class App extends Component {
   render() {
     return (
@@ -57,7 +49,6 @@ class App extends Component {
             <Route exact path="/" component={Welcome} />
             <Route exact path="/register" component={Register} />
             <Route exact path="/login" component={Login} />
-            
             <Switch>
               {/* these are the route that can only be accessed by users */}
               <PrivateRoute exact path="/dashboard" component={Dashboard} />

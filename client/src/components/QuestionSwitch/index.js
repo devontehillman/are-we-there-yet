@@ -3,15 +3,20 @@ import axios from "axios";
 import MultiButton from "../MultiButton";
 import ThumbButton from "../ThumbButton";
 import AnyQuestions from "../AnyQuestions";
-import Container from "react-bootstrap/Container";
 import StudentPromtView from "../StudentPromptView";
+
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+
 // import TopicChoice from "../TopicChoice";
 import API from "../../utils/API";
-// import App from "../../App";
 // import chart
 
-// connection for redux state management 
-import { connect } from 'react-redux';
+// connection for redux state management
+import { connect } from "react-redux";
 //get access to the history object’s properties and the closest <Route>'s match
 import { Link, withRouter } from "react-router-dom";
 import { getTopics } from "../../actions/topicActions";
@@ -60,8 +65,8 @@ class QuestionSwitch extends React.Component {
     const topic = {
       topic: this.state.topic,
       //questionType: this.state.value
-    }
-    
+    };
+
     // axios.post("/api/topic" ,topic);
     API.saveTopic({
       // userID is a placeholder and needs to be updated to grab the user id from a global state
@@ -86,26 +91,36 @@ class QuestionSwitch extends React.Component {
 
     return (
       <div>
+        <h1 style={{ textAlign: "center" }}>Add a Topic</h1>
         <Container>
-          <h3>Understanding/Comfort</h3>
-          <form onSubmit={this.handleSubmit}>
-            <label form="prompts">Choose a Type:</label>
-            <select value={this.state.value} onChange={this.handleChange}>
-              <option value="Hello">Choose an option</option>
-              <option value="multipleChoice">Multiple Choice</option>
-              <option value="thumbsChoice">Thumbs Choice</option>
-              <option value="questionsPrompt">Any Questions?</option>
-            </select>
-
-            <input type="submit" value="Submit" />
-            <input
-              id="topic"
-              className="questionName"
-              placeholder="Input Topic Here"
-              onChange={this.topicChange}
-              value={this.state.topic}
-            ></input>
-          </form>
+          <Form onSubmit={this.handleSubmit}>
+            <Form.Row>
+              <Col>
+                <Form.Control
+                  id="topic"
+                  className="questionName"
+                  placeholder="Input Topic Here"
+                  onChange={this.topicChange}
+                  value={this.state.topic}
+                ></Form.Control>
+              </Col>
+              <Col>
+                <Form.Control
+                  as="select"
+                  value={this.state.value}
+                  onChange={this.handleChange}
+                >
+                  <option value="Hello">Choose an option</option>
+                  <option value="multipleChoice">Multiple Choice</option>
+                  <option value="thumbsChoice">Thumbs Choice</option>
+                  <option value="questionsPrompt">Any Questions?</option>
+                </Form.Control>
+              </Col>
+              <Button variant="primary" type="submit">
+                Submit
+              </Button>
+            </Form.Row>
+          </Form>
           {option}
           {/* listener for what is chosen. A switchcase for what is chosen.
 Appropriate component is populated */}
@@ -120,11 +135,10 @@ QuestionSwitch.propTypes = {};
 //allow us to access topics from our Redux state as a prop inside our component
 const mapStateToProps = (state) => {
   return {
-    topic: state.topic
+    topic: state.topic,
   };
-}
+};
 
-export default connect(
-  mapStateToProps, 
-  {getTopics}
-  )(withRouter(QuestionSwitch));
+export default connect(mapStateToProps, { getTopics })(
+  withRouter(QuestionSwitch)
+);

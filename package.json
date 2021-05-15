@@ -1,50 +1,27 @@
 {
-  "name": "employee-directory",
-  "version": "0.1.0",
-  "private": true,
+  "name": "are-we-there-yet",
+  "version": "1.0.0",
+  "description": "Mern Auth Example",
+  "main": "server.js",
+  "scripts": {
+    "client-install": "npm install --prefix client",
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "author": "",
+  "license": "MIT",
   "dependencies": {
-    "axios": "^0.21.1",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.3",
-    "bootstrap": "^4.6.0",
-    "express": "^4.17.1",
-    "mongoose": "^5.12.7",
-    "validator": "^10.9.0",
-    "web-vitals": "^1.1.1"
-  },
-  "scripts": {
-    "start": "if-env NODE_ENV=production && npm run start:prod npm run start:react || npm run start:react && start:prod",
-    "start:prod": "node server.js",
-    "start:dev": "concurrently \"nodemon server.js --ignore 'src/*'\" \"cd client/ && npm run start:react\"",
-    "start:react": "react-scripts start",
-    "seed": "node scripts/seedDB.js",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "server": "nodemon server.js",
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "client": "npm start --prefix client"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "proxy": "http://localhost:3001",
-  "devDependencies": {
-    "concurrently": "^6.1.0"
+    "concurrently": "^4.0.1",
+    "express": "^4.16.4",
+    "is-empty": "^1.2.0",
+    "jsonwebtoken": "^8.3.0",
+    "mongoose": "^5.3.11",
+    "passport": "^0.4.0",
+    "passport-jwt": "^4.0.0",
+    "validator": "^10.9.0"
   }
 }

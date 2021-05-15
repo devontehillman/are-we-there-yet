@@ -1,25 +1,19 @@
-const Topic = require("../models/topic");
+const db = require("../models");
 
 module.exports = {
   findAll: function (req, res) {
-    db.Topic.find(req.query)
+    db.Response.find({"promptID": Response.promptID})
       .then((dbModel) => res.json(dbModel))
       .catch((err) => res.status(422).json(err));
   },
   findById: function (req, res) {
-    Topic.findById(req.params.id)
+    db.Response.findById(req.params.id)
       .then((dbModel) => res.json(dbModel))
       .catch((err) => res.status(422).json(err));
   },
   create: function (req, res) {
-    Topic.create(req.body)
+    db.Response.create(req.body)
       .then((dbModel) => res.json(dbModel))
       .catch((err) => res.status(422).json(err));
-  },
-  remove: function (req, res) {
-    Topic.findById({ _id: req.params.id })
-      .then((dbModel) => dbModel.remove())
-      .then((dbModel) => res.json(dbModel))
-      .catch((err) => res.status(422).json(err));
-  },
+  }
 };

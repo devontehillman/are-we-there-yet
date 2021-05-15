@@ -7,18 +7,18 @@ import { setCurrentUser, logoutUser } from "./actions/authActions";
 import { Provider } from "react-redux";
 import store from "./store";
 
-import Navbar from "./Components/layout/Navbar";
+import Navbar from "./components/Layout/Navbar";
 // change to welcome page
-import Welcome from "./Components/layout/Welcome";
+import Welcome from "./components/Layout/Welcome";
 // change to sign up 
-import Dashboard from "./Components/dashboard/Dashboard";
-import Register from "./Components/auth/Register";
-import Login from "./Components/auth/Login";
+import Dashboard from "./components/Dashboard";
+import Register from "./components/Auth/Register";
+import Login from "./components/Auth/Login";
 
-import PrivateRoute from "./Components/private-route/PrivateRoute";
-import InstructorTopicPage from "./pages/instructorTopicPage"
-import QuestionSwitch from "./Components/QuestionSwitch";
-import StudentPromptView from "./Components/StudentPromptView";
+import PrivateRoute from "./components/Private-route";
+import InstructorTopicPage from "./pages/instructorTopicPage";
+import QuestionSwitch from "./components/QuestionSwitch";
+import StudentPromptView from "./components/StudentPromptView";
 
 
 import "./App.css";

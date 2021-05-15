@@ -4,6 +4,7 @@ import ThumbButton from "../ThumbButton";
 import AnyQuestions from "../AnyQuestions";
 import Container from "react-bootstrap/Container";
 import StudentPromtView from "../StudentPromptView";
+import DropdownButton from "react-bootstrap/DropdownButton"
 // import TopicChoice from "../TopicChoice";
 import API from "../../utils/API";
 // import App from "../../App";
@@ -73,7 +74,21 @@ class QuestionSwitch extends React.Component {
       <div>
         <Container>
           <h3>Understanding/Comfort</h3>
-          <form onSubmit={this.handleSubmit}>
+          
+          <div className="dropdown">
+  <button type="button" className="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+    Dropdown button
+  </button>
+  <DropdownButton>
+  <div className="dropdown-menu">
+    <a className="dropdown-item" href="#">Link 1</a>
+    <a className="dropdown-item" href="#">Link 2</a>
+    <a className="dropdown-item" href="#">Link 3</a>
+  </div>
+  </DropdownButton>
+</div>
+
+          {/* <form onSubmit={this.handleSubmit}>
             <label form="prompts">Choose a Type:</label>
             <select value={this.state.value} onChange={this.handleChange}>
               <option value="">Choose an option</option>
@@ -90,7 +105,7 @@ class QuestionSwitch extends React.Component {
               onChange={this.topicChange}
               value={this.state.topic}
             ></input>
-          </form>
+          </form> */}
           {option}
           {/* listener for what is chosen. A switchcase for what is chosen.
 Appropriate component is populated */}

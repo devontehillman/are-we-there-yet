@@ -22,8 +22,8 @@ class QuestionSwitch extends React.Component {
     this.state = {
       // prompt:
       // {
-      value: "multipleChoice",
-      topic: "multipleChoice",
+      value: "",
+      topic: "",
       // }
     };
 

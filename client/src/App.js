@@ -13,7 +13,7 @@ import Navbar from "./Components/layout/Navbar";
 // change to welcome page
 import Welcome from "./Components/layout/Welcome";
 // change to sign up 
-import Dashboard from "./Components/dashboard/Dashboard";
+import Dashboard from "./Components/Dashboard/Dashboard";
 import Register from "./Components/auth/Register";
 import Login from "./Components/auth/Login";
 

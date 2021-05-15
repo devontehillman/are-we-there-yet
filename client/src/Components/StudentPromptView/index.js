@@ -9,13 +9,17 @@ function StudentPromptView() {
   const [topic, setTopic] = useState("");
   const [type, setType] = useState("");
 
-  useEffect(() => {
+  useEffect(() => {}, []);
+
+  setInterval(() => {
     loadTopics();
-  }, []);
+  }, 3000);
 
   function something(res) {
-    setTopic(res.data[0].topic);
-    setType(res.data[0].questionType);
+    const totaltops = res.data;
+    const newtopic = totaltops[totaltops.length - 1];
+    setTopic(newtopic.topic);
+    setType(newtopic.questionType);
   }
 
   function loadTopics() {
@@ -40,7 +44,7 @@ function StudentPromptView() {
   return (
     <div>
       <Container>
-        <h3>Press the Button!</h3>
+        <h3>Comprehension Check</h3>
         {/* <button onClick={handleSubmit}>
           <input type="submit" value="Submit" />
         </button> */}

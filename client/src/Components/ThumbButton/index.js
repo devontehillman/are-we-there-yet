@@ -7,14 +7,11 @@ function ThumbButton({ topic }) {
     console.log("Hi, good job!");
     console.log(e.target.value);
     const resp = e.target.value;
-    addResponse();
-    function addResponse() {
-      API.saveResponse({
-        userID: "2",
-        topicID: { topic },
-        answer: resp,
-      });
-    }
+    API.saveResponse({
+      userID: "6099bf2843afca3ed4f46e53",
+      topicID: { topic },
+      answer: resp,
+    });
   }
 
   return (

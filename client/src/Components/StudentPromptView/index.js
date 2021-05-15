@@ -24,6 +24,7 @@ function StudentPromptView() {
       // .then((res) => setTopic(res.data[0].topic))
       // .then((res) => setType(res.data[0].questionType))
       .catch((err) => console.log(err));
+    console.log(topic);
   }
 
   let option;

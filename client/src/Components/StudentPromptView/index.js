@@ -1,53 +1,66 @@
-import React, { useEffect, useState } from "react";
+import React, { Component } from "react";
 import MultiButton from "../MultiButton";
 import ThumbButton from "../ThumbButton";
 import AnyQuestions from "../AnyQuestions";
 import API from "../../utils/API";
 import Container from "react-bootstrap/Container";
 
-function StudentPromptView() {
-  const [topic, setTopic] = useState("");
-  const [type, setType] = useState("");
+class StudentPromptView extends Component {
+    constructor(props) {
+      super(props);
+      this.state = {
+        topics:[]
+      }
+      this.loadTopics = this.loadTopics.bind(this)
+    }
 
-  useEffect(() => {
-    loadTopics();
-  }, []);
-
-  function loadTopics() {
-    API.getTopics()
-      .then((res) => console.log(res.data))
-      .then((res) => setTopic(res.data.topic))
-      .then((res) => setType(res.data.questionType))
-      .catch((err) => console.log(err));
+ 
+   async loadTopics() {
+    await fetch("/api/topic")
+    .then((res) => res.json())
+    .then((data) => {
+        console.log(data)
+        this.setState({
+        topics: data
+      })
+      console.log(this.state);
+    })
   }
 
-  function handleSubmit(e) {
-    e.preventDefault();
-    loadTopics();
-    console.log("Hi!");
+  componentDidMount(){
+    this.loadTopics()
   }
 
-  let option;
+render() {
+  // function handleSubmit(e) {
+  //   e.preventDefault();
+  //   loadTopics();
+  //   console.log("Hi!");
+  // }
 
-  if (type === "multipleChoice") {
-    option = <MultiButton />;
-  } else if (type === "thumbsChoice") {
-    option = <ThumbButton />;
-  } else if (type === "questionsPrompt") {
-    option = <AnyQuestions />;
-  }
+  // let option;
+
+  // if (type === "multipleChoice") {
+  //   option = <MultiButton />;
+  // } else if (type === "thumbsChoice") {
+  //   option = <ThumbButton />;
+  // } else if (type === "questionsPrompt") {
+  //   option = <AnyQuestions />;
+  // }
 
   return (
     <div>
       <Container>
-        <h3>Press the Button!</h3>
-        <h1>{topic}</h1>
-        <button onClick={handleSubmit}>
+        <h3>Topics!</h3>
+       {this.state.topics.map(topiclist => 
+          <h1 key={topiclist._id} >{topiclist.topic}</h1>
+          )}
+        {/* <button onClick={handleSubmit}>
           <input type="submit" value="Submit" />
-        </button>
-        {option}
+        </button> */}
+        {/* {this.state.topic.option} */}
       </Container>
     </div>
   );
-}
+}}
 export default StudentPromptView;

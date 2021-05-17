@@ -52,9 +52,7 @@ class QuestionSwitch extends React.Component {
   }
 
   handleTopicClick(e){
-    console.log("click")
-    const id = this.key 
-    console.log(e.target.id)
+    // grab idof button clicked and saves to local storage and redirects
     localStorage.setItem('topicID', e.target.id );
     window.location.href='/topicresponse'
     //localStorage.removeItem('topicID')

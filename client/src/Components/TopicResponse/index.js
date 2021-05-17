@@ -20,23 +20,23 @@ class TopicResponse extends Component {
     
     //axios.post("/api/topic" ,topic)
     componentDidMount(){
-        const topic = localStorage.getItem('topicID')
-        console.log(topic)
-        fetch("/api/topic/" + topic,{
+        const topicID = localStorage.getItem('topicID')
+        console.log(topicID)
+        fetch("/api/topic/" + topicID,{
             headers : { 
                 'Content-Type': 'application/json',
                 'Accept': 'application/json'
                }
         })
         .then(res => res.json())
-        //.then(res=> console.log(res))
-        .then((data) => {
-            this.setState({
-            topic: data.topic,
-            prompt: data.questionType
-          })
-          console.log(this.state)
-        })
+        .then(res=> console.log(res))
+        // .then((data) => {
+        //     this.setState({
+        //     topic: data.topic,
+        //     prompt: data.questionType
+        //   })
+        //   console.log(this.state)
+        // })
 
     }
     

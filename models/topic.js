@@ -10,7 +10,12 @@ const topicSchema = new Schema({
     userID: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
     answer: { type: String, required: true },
     date: { type: Date, default: Date.now },
-  }]
+  }],
+  classResponses: {
+    thumbs:   { type: Object, required: false },
+    multiple: { type: Object, required: false},
+    question: { type: Object, required: false},
+  }
 });
 
 const Topic = mongoose.model("Topic", topicSchema);

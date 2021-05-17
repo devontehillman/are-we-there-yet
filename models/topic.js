@@ -6,11 +6,11 @@ const topicSchema = new Schema({
   topic: { type: String, required: true },
   questionType: { type: String, required: true },
   date: { type: Date, default: Date.now },
-  responses: [{
-    userID: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
-    answer: { type: String, required: true },
-    date: { type: Date, default: Date.now },
-  }]
+  // responses: [{
+  //   userID: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
+  //   answer: { type: String, required: true },
+  //   date: { type: Date, default: Date.now },
+  // }]
 });
 
 const Topic = mongoose.model("Topic", topicSchema);

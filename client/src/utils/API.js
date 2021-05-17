@@ -20,7 +20,10 @@ export default {
   saveResponse: function (response) {
     return axios.post("/api/responses", response);
   },
-  getResponses: function (topicID) {
-    return axios.get("/api/responses" + topicID);
+  // getResponse: function (topicID) {
+  //   return axios.get("/api/responses/" + topicID);
+  // },
+  getResponses: function () {
+    return axios.get("/api/responses");
   },
 };

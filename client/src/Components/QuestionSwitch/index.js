@@ -25,16 +25,30 @@ class QuestionSwitch extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      // prompt:
-      // {
       value: "",
       topic: "",
-      // }
+      topiclist: []
     };
 
     this.topicChange = this.topicChange.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.loadTopics = this.loadTopics.bind(this)
+  }
+  async loadTopics() {
+    await fetch("/api/topic")
+    .then((res) => res.json())
+    .then((data) => {
+        console.log(data)
+        this.setState({
+        topiclist: data
+      })
+      console.log(this.state);
+    })
+  }
+
+  componentDidMount(){
+    this.loadTopics()
   }
 
   handleChange(e) {
@@ -121,6 +135,12 @@ class QuestionSwitch extends React.Component {
               </Button>
             </Form.Row>
           </Form>
+          <Row className="topic-list">
+          <h3>Topics!</h3>
+          {this.state.topiclist.map(topiclist => 
+          <h1 key={topiclist._id} >{topiclist.topic}</h1>
+          )}
+          </Row>
           {option}
           {/* listener for what is chosen. A switchcase for what is chosen.
 Appropriate component is populated */}

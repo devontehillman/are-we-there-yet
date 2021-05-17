@@ -39,11 +39,9 @@ class QuestionSwitch extends React.Component {
     await fetch("/api/topic")
     .then((res) => res.json())
     .then((data) => {
-        console.log(data)
         this.setState({
         topiclist: data
       })
-      console.log(this.state);
     })
   }
 
@@ -59,49 +57,35 @@ class QuestionSwitch extends React.Component {
     this.setState({ topic: e.target.value });
   };
 
-  //   topicChange(e) {
-  //     const topic = e.target.value
-  //     this.setState(function(state) {
-  //       return {
-  //         details: Object.assign({},
-  //           state.prompt, {
-  //           topic: topic
-  //   })
-  // }
-  // }
-  // )};
 
   handleSubmit(e) {
     e.preventDefault();
-    //console.log(this.state.value);
-    console.log(this.state.topic);
 
     const topic = {
       topic: this.state.topic,
-      //questionType: this.state.value
     };
 
     // axios.post("/api/topic" ,topic);
     API.saveTopic({
-      // userID is a placeholder and needs to be updated to grab the user id from a global state
-      // userID: req.user.id
       topic: this.state.topic,
       questionType: this.state.value,
     });
+
+    window.location.reload();
   }
 
   render() {
     console.log(this.state.value);
     let option;
 
-    // <option value="">Choose an option</option>;
-    if (this.state.value === "multipleChoice") {
-      option = <MultiButton />;
-    } else if (this.state.value === "thumbsChoice") {
-      option = <ThumbButton />;
-    } else if (this.state.value === "questionsPrompt") {
-      option = <AnyQuestions />;
-    }
+    // // <option value="">Choose an option</option>;
+    // if (this.state.value === "multipleChoice") {
+    //   option = <MultiButton />;
+    // } else if (this.state.value === "thumbsChoice") {
+    //   option = <ThumbButton />;
+    // } else if (this.state.value === "questionsPrompt") {
+    //   option = <AnyQuestions />;
+    // }
 
     return (
       <div>

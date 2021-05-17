@@ -16,6 +16,7 @@ class Navbar extends Component {
               <Nav.Link href="./Login"><span className="glyphicon glyphicon-log-in"></span>Login</Nav.Link>
               <Nav.Link href="./addtopic"><span className="glyphicon glyphicon-log-in"></span>Add Topic</Nav.Link>
               <Nav.Link href="./viewtopics"><span className="glyphicon glyphicon-log-in"></span>See Topics</Nav.Link>
+              <Nav.Link href="./topicresponse"><span className="glyphicon glyphicon-log-in"></span>Topic Response</Nav.Link>
             </Nav>
           </Container>
         </NavBar>

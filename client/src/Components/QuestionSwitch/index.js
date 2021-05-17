@@ -32,6 +32,7 @@ class QuestionSwitch extends React.Component {
 
     this.topicChange = this.topicChange.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.handleTopicClick = this.handleTopicClick.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.loadTopics = this.loadTopics.bind(this)
   }
@@ -42,11 +43,22 @@ class QuestionSwitch extends React.Component {
         this.setState({
         topiclist: data
       })
+      console.log(this.state.topiclist)
     })
   }
 
   componentDidMount(){
     this.loadTopics()
+  }
+
+  handleTopicClick(e){
+    console.log("click")
+    const id = this.key 
+    console.log(e.target.id)
+    localStorage.setItem('topicID', e.target.id );
+    window.location.href='/topicresponse'
+    //localStorage.removeItem('topicID')
+
   }
 
   handleChange(e) {
@@ -122,7 +134,14 @@ class QuestionSwitch extends React.Component {
           <Row className="topic-list">
           <h3>Topics!</h3>
           {this.state.topiclist.map(topiclist => 
-          <h1 key={topiclist._id} >{topiclist.topic}</h1>
+          <Button 
+          onClick={this.handleTopicClick}
+          style= {{margin:"10px"}}
+          key={topiclist._id}
+          id={topiclist._id}
+          >
+          {topiclist.topic}
+          </Button>
           )}
           </Row>
           {option}

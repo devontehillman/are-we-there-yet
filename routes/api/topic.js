@@ -7,9 +7,8 @@ router.post("/topic", topicController.create)
 //     .get(topicController.findAll)
 //     .post(topicController.create);
 
-// router
-//     .route("/:id")
-//     .get(topicController.findById);
-//     .delete(topicController.remove);
+router.get("/topic/:id", topicController.findById)
+    // .route("/:id");
+    // .delete(topicController.remove);
 
 module.exports = router;

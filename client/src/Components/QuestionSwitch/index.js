@@ -79,7 +79,7 @@ class QuestionSwitch extends React.Component {
     API.saveTopic({
       topic: this.state.topic,
       questionType: this.state.value,
-      classResponses: {thumbs:{hello:"you"}}
+      classResponses: {}
     });
 
     window.location.reload();

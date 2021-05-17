@@ -29,14 +29,14 @@ class TopicResponse extends Component {
                }
         })
         .then(res => res.json())
-        .then(res=> console.log(res))
-        // .then((data) => {
-        //     this.setState({
-        //     topic: data.topic,
-        //     prompt: data.questionType
-        //   })
-        //   console.log(this.state)
-        // })
+        //.then(res=> console.log(res))
+        .then((data) => {
+            this.setState({
+            topic: data.topic,
+            prompt: data.questionType
+          })
+          console.log(this.state)
+        })
 
     }
     

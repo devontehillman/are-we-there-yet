@@ -8,6 +8,18 @@ class ThumbButton extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     }
 
+    componentDidMount() {
+        const topicID = localStorage.getItem('topicID')
+        console.log(topicID)
+        fetch("/api/topic/" + topicID,{
+            headers : { 
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+               }
+        })
+        .then(res => res.json())
+        .then(res=> console.log(res.classResponses))
+    }
 
     handleSubmit(e) {
         e.preventDefault();

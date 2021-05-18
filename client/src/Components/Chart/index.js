@@ -1,0 +1,25 @@
+// import React, { Component } from 'react'
+// import { Chart, LineController, LineElement, PointElement, LinearScale, Title } from `chart.js`
+
+// Chart.register(LineController, LineElement, PointElement, LinearScale, Title);
+
+// const chart = new Chart(ctx, {
+//     type: 'line',
+//     // data: ...
+//     options: {
+//         plugins: {
+//             title: {
+//                 display: true,
+//                 text: 'Chart Title'
+//             }
+//         },
+//         scales: {
+//             x: {
+//                 type: 'linear'
+//             },
+//             y: {
+//                 type: 'linear'
+//             }
+//         }
+//     }
+// })

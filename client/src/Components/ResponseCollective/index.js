@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import API from "../../utils/API";
-import myLineGraph from "../graphs";
+// import myLineGraph from "../graphs";
 function ResponseCollective() {
   const [answer, setResponses] = useState("");
   //   const [_id, setID] = useState([]);
@@ -54,7 +54,7 @@ function ResponseCollective() {
       ) : (
         <h3>No One Has an Opinion, I Guess.</h3>
       )} */}
-      <myLineGraph />
+      {/* <myLineGraph /> */}
     </div>
   );
 }

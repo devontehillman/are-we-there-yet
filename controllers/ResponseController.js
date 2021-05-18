@@ -2,11 +2,11 @@
 const Response = require("../models/response");
 
 module.exports = {
-  // findAll: function (req, res) {
-  //   db.Response.find({ topicID: Response.topicID })
-  //     .then((dbModel) => res.json(dbModel))
-  //     .catch((err) => res.status(422).json(err));
-  // },
+  findAllAnswers: function (req, res) {
+    Response.find({ topicID: Response.topicID })
+      .then((dbModel) => res.json(dbModel))
+      .catch((err) => res.status(422).json(err));
+  },
   findAll: function (req, res) {
     Response.find(req.query)
       .then((dbModel) => res.json(dbModel))

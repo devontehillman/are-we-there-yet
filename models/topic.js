@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 const topicSchema = new Schema({
-  userID: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
+  userID: { type: mongoose.Schema.Types.ObjectId, ref: "user" },
   topic: { type: String, required: true },
   questionType: { type: String, required: true },
   date: { type: Date, default: Date.now },

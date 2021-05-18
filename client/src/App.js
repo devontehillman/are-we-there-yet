@@ -14,8 +14,8 @@ import Navbar from "./Components/layout/Navbar";
 import Welcome from "./Components/layout/Welcome";
 // change to sign up 
 import Dashboard from "./Components/Dashboard/Dashboard";
-import Register from "./Components/auth/Register";
-import Login from "./Components/auth/Login";
+import Register from "./Components/Auth/Register";
+import Login from "./Components/Auth/Login";
 
 import PrivateRoute from "./Components/Private-Route/PrivateRoute";
 import InstructorTopicPage from "./pages/instructorTopicPage"

@@ -2,14 +2,14 @@ import React from "react";
 import MultiButton from "../MultiButton";
 import ThumbButton from "../ThumbButton";
 import AnyQuestions from "../AnyQuestions";
-import Container from "react-bootstrap/Container";
-import StudentPromtView from "../StudentPromptView";
+
+//import StudentPromtView from "../StudentPromptView";
 // import TopicChoice from "../TopicChoice";
 import API from "../../utils/API";
 // import App from "../../App";
 // import chart
 
-import Button from "react-bootstrap/Button";
+//import Button from "react-bootstrap/Button";
 
 class QuestionSwitch extends React.Component {
   constructor(props) {

@@ -13,13 +13,7 @@ class TopicList extends Component {
         this.setState({[e.target.name]: e.target.value})
     }
 
-    onSubmit(e){
-        e.preventDefault();
-        const post = {
-            title: this.state.title,
-            body: this.state.body
-        }
-    }
+  
     
     render() {
         return (

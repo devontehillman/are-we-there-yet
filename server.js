@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const passport = require("passport");
 const routes = require("./routes");
+const path = require('path')
 
 // const users = require("./routes/api/users");
 // const index = require("./routes/api/index");
@@ -39,6 +40,16 @@ require("./config/passport")(passport);
 // app.use("/api/responses", responses);
 //app.use(routes)
 app.use(routes);
+
+// serve static assets if we are in production 
+if (process.env.NODE_ENV==='production'){
+  // set a static folder 
+  app.use(express.static('client/build'))
+
+  app.get('*', (req, res)=>{
+    res.sendFile(path.resolve(_dirname,'client','build','index.html'))
+  })
+}
 
 const port = process.env.PORT || 5000;
 

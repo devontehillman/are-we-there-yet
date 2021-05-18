@@ -17,10 +17,16 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
 // DB Config
-const db = require("./config/keys").mongoURI;
+//const db = require("./config/keys").mongoURI;
 
 // Connect to MongoDB
-mongoose.connect(db,{ useNewUrlParser: true })
+mongoose.connect(process.env.MONGODB_URI ||  "mongodb://localhost/AreWeThereYet",
+{
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useCreateIndex: true,
+  useFindAndModify: false
+})
   .then(() => console.log("MongoDB successfully connected"))
   .catch(err => console.log(err));
 

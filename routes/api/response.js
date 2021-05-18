@@ -6,7 +6,9 @@ router
   .get(responseController.findAll)
   .post(responseController.create);
 
-router.route("/:id").get(responseController.findById);
+router.route("/:id")
+// .get(responseController.findById)
+.get(responseController.findAllAnswers);
 
 router.get("/test", (req, res) => {
   res.send("Responses")

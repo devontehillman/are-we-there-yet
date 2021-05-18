@@ -1,25 +1,60 @@
-// import React, { Component } from 'react'
-// import { Chart, LineController, LineElement, PointElement, LinearScale, Title } from `chart.js`
+import React, {Component} from 'react';
+import {Bar, Line, Pie} from 'react-chartjs-2';
 
-// Chart.register(LineController, LineElement, PointElement, LinearScale, Title);
+class Chart extends Component{
+  constructor(props){
+    super(props);
+    this.state = {
+      chartData:props.chartData
+    }
+  }
 
-// const chart = new Chart(ctx, {
-//     type: 'line',
-//     // data: ...
-//     options: {
-//         plugins: {
-//             title: {
-//                 display: true,
-//                 text: 'Chart Title'
-//             }
-//         },
-//         scales: {
-//             x: {
-//                 type: 'linear'
-//             },
-//             y: {
-//                 type: 'linear'
-//             }
-//         }
-//     }
-// })
+  static defaultProps = {
+    displayTitle:true,
+  }
+  componentWillMount(){
+    // this.getchartData(); // this should be this.getChartData();
+     this.getChartData();
+   }
+ 
+   getChartData(){
+     this.setState({
+       chartData:{
+         labels: ['1', '2', '3', '4', '5'],
+         datasets:[
+           {
+             label:'Comprehension',
+             data:[
+               1,
+               4,
+               7,
+               22,
+               20,
+             ],
+             backgroundColor:[
+               '#95B73D',
+             ]
+           }
+         ]
+       }
+     });
+   }
+  render(){
+    return (
+      <div className="chart">
+        <Bar
+          data={this.state.chartData}
+          options={{
+            title:{
+              display:this.props.displayTitle,
+              text:'Largest Cities In ',
+              fontSize:25
+            }
+          }}
+        />
+      </div>
+    )
+  }
+}
+
+export default Chart;

@@ -21,6 +21,7 @@ import PrivateRoute from "./Components/Private-Route/PrivateRoute";
 import InstructorTopicPage from "./pages/instructorTopicPage"
 import QuestionSwitch from "./Components/QuestionSwitch";
 import StudentPromptView from "./Components/StudentPromptView";
+import ResponseCollective from "./Components/ResponseCollective";
 
 
 import "./App.css";
@@ -64,6 +65,7 @@ class App extends Component {
               <PrivateRoute path="/topiclist" exact component={InstructorTopicPage}/>
               <PrivateRoute exact path="/addtopic" component={QuestionSwitch} />
               <PrivateRoute exact path="/viewtopics" component={StudentPromptView} />
+              <PrivateRoute exact path="/final" component={ResponseCollective} />
             </Switch>
           </div>
         </Router>

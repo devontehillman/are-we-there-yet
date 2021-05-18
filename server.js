@@ -2,11 +2,12 @@ const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const passport = require("passport");
-//const routes = require("./routes");
+const routes = require("./routes");
 
-const users = require("./routes/api/users");
-const index = require("./routes/api/index");
-const topics = require("./routes/api/topic");
+// const users = require("./routes/api/users");
+// const index = require("./routes/api/index");
+// const topics = require("./routes/api/topic");
+// const responses = require("./routes/api/response");
 
 const app = express();
 
@@ -32,11 +33,12 @@ app.use(passport.initialize());
 require("./config/passport")(passport);
 
 // Routes
-app.use("/api/users", users);
-app.use("/api", index);
-app.use("/api", topics);
+// app.use("/api/users", users);
+// app.use("/api", index);
+// app.use("/api", topics);
+// app.use("/api/responses", responses);
 //app.use(routes)
-//app.use(routes);
+app.use(routes);
 
 const port = process.env.PORT || 5000;
 

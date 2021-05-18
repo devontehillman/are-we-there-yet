@@ -1,5 +1,5 @@
 module.exports = {
-    Response: require("./response"),
     User: require("./user"),
-    Topic: require("./topic")
+    Topic: require("./topic"),
+    Response: require("./response")
   };

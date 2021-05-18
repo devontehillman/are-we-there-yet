@@ -8,4 +8,8 @@ router
 
 router.route("/:id").get(responseController.findById);
 
+router.get("/test", (req, res) => {
+  res.send("Responses")
+});
+
 module.exports = router;

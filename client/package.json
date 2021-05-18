@@ -28,7 +28,7 @@
     "eject": "react-scripts eject",
     "server": "nodemod server.js"
   },
-  "proxy": "http://127.0.0.1:5000",
+  "proxy": "http://127.0.0.1:5000/",
   "browserslist": [
     ">0.2%",
     "not dead",

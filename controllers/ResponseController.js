@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 
 module.exports = {
   findAllAnswers: function (req, res) {
-    const match_id = mongoose.Types.ObjectId(req.params.topicID);
+    // const match_id = mongoose.Types.ObjectId(req.params.topicID);
 
     Response.aggregate([
       { $match: { topicID: req.params.topicID } },

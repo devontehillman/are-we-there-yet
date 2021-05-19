@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from "react";
 import API from "../../utils/API";
-import Chart from "../Chart"
-function ResponseCollective() {
+
+import NewChart from "../NewChart"
+import NewChartB from "../NewChartB"
+import OldChart from "../OldChart"
+function ResponseCollective({}) {
   const [answer, setResponses] = useState([]);
   const [topicID, setTopicID] = useState("");
 
@@ -25,12 +28,6 @@ function ResponseCollective() {
     // console.log(topicID);
   }
   
-  // function getThemResponses(res) {
-  //   answer = res
-  //   console.log(answer);
-
-  // }
-
   function loadResponses() {
     API.getResponses(topicID)
       // .then((res) => getThemResponses(res.data))
@@ -42,9 +39,11 @@ function ResponseCollective() {
 console.log(answer);
 console.log(topicID);
 
+
+
   return (
     <div>
-      <Chart />
+      <OldChart/>
     </div>
   );
 }

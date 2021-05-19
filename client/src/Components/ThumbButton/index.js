@@ -26,8 +26,8 @@ function ThumbButton({ topic }) {
   function handleSubmit(e) {
     e.preventDefault();
     console.log("Hi, good job!");
-    console.log(e.target.value);
-    const resp = e.target.value;
+    console.log(e.target.text);
+    const resp = e.target.text;
     API.saveResponse({
       userID: "6099bf2843afca3ed4f46e53",
       topicID: newtopic._id,

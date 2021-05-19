@@ -3,59 +3,43 @@ import API from "../../utils/API";
 // import myLineGraph from "../graphs";
 import Chart from "../Chart"
 function ResponseCollective() {
-  const [answer, setResponses] = useState("");
+  const [answer, setResponses] = useState([]);
+  const [topicID, setTopicID] = useState("");
   //   const [_id, setID] = useState([]);
   //   const [userID, setuserID] = useState([]);
   //   const [topicID, settopicID] = useState([]);
+
+  function something(res) {
+    const totaltops = res.data;
+    const newtopicID = totaltops[totaltops.length - 1];
+    setTopicID(newtopicID._id);
+  }
+  function loadTopicID() {
+    API.getTopics()
+      .then((res) => something(res))
+      .catch((err) => console.log(err));
+    console.log(topicID);
+  }
+
   useEffect(() => {}, []);
+  
   loadResponses();
   function getThemResponses(res) {
-    const totalResponses = res.data;
-    const newresponse = totalResponses[totalResponses.length - 1];
-    setResponses(newresponse.answer);
+    setResponses(res);
     console.log(answer);
-    // setID(totalResponses._id);
-    // setuserID(totalResponses.userID);
-    // settopicID(totalResponses.topicID);
+
   }
   function loadResponses() {
-    API.getResponses()
-      .then((res) => getThemResponses(res))
-      //   .then((res) => console.log(res.data))
+    API.getResponses(topicID)
+      .then((res) => getThemResponses(res.data))
+        // .then((res) => console.log(res.data))
       .catch((err) => console.log(err));
   }
-  ////////////CHARTS!////////////////
-  //   chartRef = React.createRef();
-  //   const myChartRef = this.chartRef.current.getContext("2d");
-  //   new Chart(myChartRef, {
-  //     type: "line",
-  //     data: {
-  //       //Bring in data
-  //       labels: ["Jan", "Feb", "March"],
-  //       datasets: [
-  //         {
-  //           label: "Sales",
-  //           data: [86, 67, 91],
-  //         },
-  //       ],
-  //     },
-  //   });
-  //////////////////////////////////////////
+
+  loadTopicID();
+  
   return (
     <div>
-      {answer}
-      {/* {answers.length ? (
-        <List>
-          {answers.map((answer) => (
-            <ListItem key={answer._id}>
-              <strong>{answer.answer}</strong>
-            </ListItem>
-          ))}
-        </List>
-      ) : (
-        <h3>No One Has an Opinion, I Guess.</h3>
-      )} */}
-      {/* <myLineGraph /> */}
       <Chart />
     </div>
   );

@@ -21,6 +21,6 @@ export default {
     return axios.post("/api/responses", response);
   },
   getResponses: function (topicID) {
-    return axios.get("/api/responses" + topicID);
+    return axios.get("/api/responses/" + topicID);
   },
 };

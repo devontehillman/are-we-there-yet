@@ -9,7 +9,7 @@ class OldChart extends Component{
     super(props);
     this.state = {
       chartData:props.chartData,
-      topic: props.topic
+      // topic: props.topic
     }
   }
 
@@ -18,24 +18,25 @@ class OldChart extends Component{
   }
   componentDidMount(){
      this.getChartData();
-     this.getTopic();
+    //  this.getTopic();
 
    }
 
 
-getTopic (){
-    axios.get("/api/topic").then(res => {
-        const totaltops = res.data;
-        const newtopicID = totaltops[totaltops.length - 1];
-        this.setState({
-            topic: newtopicID._id});
-        console.log(newtopicID._id)
-    })
-}
+// getTopic (){
+//     axios.get("/api/topic").then(res => {
+//         const totaltops = res.data;
+//         const newtopicID = totaltops[totaltops.length - 1];
+//         this.setState({
+//             topic: newtopicID._id});
+//         console.log(newtopicID._id)
+//     })
+// }
 
 
    getChartData(){
-         axios.get("/api/responses/60a3242fbf206e1e84e346e4").then(res => {
+      const topicID = localStorage.getItem('topicID')
+         axios.get("/api/responses/" + topicID).then(res => {
         const coin = res.data;
         let labels = [];
         let data = [];

@@ -13,7 +13,7 @@ import Navbar from "./Components/layout/Navbar";
 // change to welcome page
 import Welcome from "./Components/layout/Welcome";
 // change to sign up 
-import Dashboard from "./Components/Dashboard/Dashboard";
+// import Dashboard from "./Components/Logout/Logout";
 import Register from "./Components/Auth/Register";
 import Login from "./Components/Auth/Login";
 
@@ -64,7 +64,7 @@ class App extends Component {
             
             <Switch>
               {/* these are the route that can only be accessed by users */}
-              <PrivateRoute exact path="/dashboard" component={Dashboard} />
+              {/* <PrivateRoute exact path="/dashboard" component={Dashboard} /> */}
               <PrivateRoute path="/topiclist" exact component={InstructorTopicPage}/>
               <PrivateRoute exact path="/addtopic" component={QuestionSwitch} />
               <PrivateRoute exact path="/viewtopics" component={StudentPromptView} />

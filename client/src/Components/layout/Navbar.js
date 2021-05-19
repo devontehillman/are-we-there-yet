@@ -12,10 +12,10 @@ class Navbar extends Component {
             <NavBar.Brand href="#home" className="cornerlogo"><img src="images/AWtY.png" alt="are we there yet logo" className="cornerlogo"></img></NavBar.Brand>
             <Nav className="selection">
               <Nav.Link href="./"><span className="glyphicon glyphicon-home"></span>Home</Nav.Link>
-              <Nav.Link href="./Register"><span className="glyphicon glyphicon-user"></span>Sign Up</Nav.Link>
-              <Nav.Link href="./Login"><span className="glyphicon glyphicon-log-in"></span>Login</Nav.Link>
+              {/* <Nav.Link href="./Register"><span className="glyphicon glyphicon-user"></span>Sign Up</Nav.Link>
+              <Nav.Link href="./Login"><span className="glyphicon glyphicon-log-in"></span>Login</Nav.Link> */}
               <Nav.Link href="./addtopic"><span className="glyphicon glyphicon-log-in"></span>Add Topic</Nav.Link>
-              <Nav.Link href="./viewtopics"><span className="glyphicon glyphicon-log-in"></span>See Topics</Nav.Link>
+              <Nav.Link href="./viewtopics"><span className="glyphicon glyphicon-log-in"></span>Answer Prompt</Nav.Link>
             </Nav>
           </Container>
         </NavBar>

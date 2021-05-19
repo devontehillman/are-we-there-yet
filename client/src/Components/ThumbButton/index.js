@@ -1,6 +1,13 @@
 import React from "react";
 import API from "../../utils/API";
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+
+
 function ThumbButton({ topic }) {
+    const btnStyle = {
+    margin:"10px"
+    }
+
   let newtopic;
   grabTopic();
   function something(res) {
@@ -29,16 +36,16 @@ function ThumbButton({ topic }) {
   }
   return (
     <div className="row">
-      <button onClick={handleSubmit} value="up">
-        Up
-      </button>
-      <button onClick={handleSubmit} value="ok">
-        Ok
-      </button>
-      <button onClick={handleSubmit} value="down">
-        Down
-      </button>
+      <div className="col s12" style={{ display: "flex", justifyContent: "center"}}>
+        <a className="emoji col xl4 l4 m4 s4" style={btnStyle} onClick={handleSubmit} value="up">👍</a>
+        <a className="emoji col xl4 l4 m4 s4" style={btnStyle} onClick={handleSubmit} value="ok">👌</a>
+        <a className="emoji col xl4 l4 m4 s4" style={btnStyle} onClick={handleSubmit} value="down">👎 </a>
+      </div>
     </div>
+   
   );
-}
+} 
+
+//{<FontAwesomeIcon color="Black" icon="thumbs-down" size="3x"/>}
+//{<FontAwesomeIcon color="Black" icon="thumbs-up" flip="horizontal" size="3x"/>}
 export default ThumbButton;

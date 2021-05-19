@@ -1,5 +1,8 @@
 import React from "react";
 import API from "../../utils/API";
+import './../../multibutton.css'
+
+
 function MultiButton({ topic }) {
   let newtopic;
   grabTopic();
@@ -28,22 +31,14 @@ function MultiButton({ topic }) {
     });
   }
   return (
-    <div className="row">
-      <button onClick={handleSubmit} value="1">
-        1
-      </button>
-      <button onClick={handleSubmit} value="2">
-        2
-      </button>
-      <button onClick={handleSubmit} value="3">
-        3
-      </button>
-      <button onClick={handleSubmit} value="4">
-        4
-      </button>
-      <button onClick={handleSubmit} value="5">
-        5
-      </button>
+    <div className="row" >
+       <div className="col s12">
+      <button type="button" class="col xl2 l2 m2 s12 .multi-btn btn-large hoverable waves-effect waves-light white-text green lighten-3" onClick={handleSubmit} value="1">1</button>
+      <button type="button" class="col xl2 l2 m2 s12 .multi-btn btn-large hoverable waves-effect waves-light white-text left green lighten-1" onClick={handleSubmit} value="2">2</button>
+      <button type="button" class="col xl2 l2 m2 s12 .multi-btn btn-large hoverable waves-effect waves-light white-text green left" onClick={handleSubmit} value="3">3</button>
+      <button type="button" class="col xl2 l2 m2 s12 .multi-btn btn-large hoverable waves-effect waves-light white-text green darken-1 left" onClick={handleSubmit} value="4">4</button>
+      <button type="button" class="col xl2 l2 m2 s12 .multi-btn btn-large hoverable waves-effect waves-light left white-text green darken-2" onClick={handleSubmit} value="5">5</button>
+      </div>
     </div>
   );
 }

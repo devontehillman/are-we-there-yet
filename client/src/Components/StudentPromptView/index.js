@@ -40,7 +40,7 @@ function StudentPromptView() {
         {/* <button onClick={handleSubmit}>
           <input type="submit" value="Submit" />
         </button> */}
-        <h1>{topic}</h1>
+        <h1 style={{textAlign:"center", textDecoration: "underline;"}}>{topic}</h1>
         {option}
       </Container>
     </div>

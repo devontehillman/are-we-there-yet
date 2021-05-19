@@ -6,6 +6,7 @@
     "axios": "^0.18.0",
     "bootstrap": "^4.6.0",
     "classnames": "^2.2.6",
+    "http-proxy-middleware": "^0.18.0",
     "jwt-decode": "^2.2.0",
     "react": "^17.0.2",
     "react-bootstrap": "^1.6.0",
@@ -26,7 +27,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "server": "nodemod server.js"
+    "server": "nodemon server.js"
   },
   "browserslist": [
     ">0.2%",

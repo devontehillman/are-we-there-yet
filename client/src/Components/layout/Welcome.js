@@ -4,13 +4,13 @@ import React from "react"
 
 function Welcome(props) {
     return (
-<div>
+<div className="container">
         
-<h3 className="welcome">Welcome To Are We There Yet</h3>
+<h1 className="welcome">Welcome To Are We There Yet</h1>
+<h3>Where comprehension is the destination</h3>
 
-<div className="recaps">Recap/Overall Stats</div>
-
-<img src="images/AWtY.png" alt="Are We There Yet logo" class="welcomelogo" />
+{/* <div className="recaps">Recap/Overall Stats</div> */}
+{/* <img src="images/" alt="Are We There Yet logo" class="welcomelogo" /> */}
 </div>
     );
 }

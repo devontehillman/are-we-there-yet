@@ -4,6 +4,8 @@ import ThumbButton from "../ThumbButton";
 import AnyQuestions from "../AnyQuestions";
 import API from "../../utils/API";
 import Container from "react-bootstrap/Container";
+import Logout from "../Logout";
+
 
 import Card from "react-bootstrap/Card";
 
@@ -40,6 +42,7 @@ function StudentPromptView() {
   return (
     <div>
       <Container>
+      <Logout />
         <h3 style={{margin:"20px"}}>Comprehension Check</h3>
         <Card style={{padding:"15px"}}>
         {/* <button onClick={handleSubmit}><input type="submit" value="Submit" /></button> */}

@@ -7,6 +7,7 @@
   height: 100px; 
   width: 200px;
   float: left;
+  margin-top: 25px;
 }
  
 .selection{
@@ -114,4 +115,7 @@ padding-bottom: 40px;
 }
 .topicbtn{
     background : #27603C;
+}
+.welcome-card{
+    padding: 15px;
 }

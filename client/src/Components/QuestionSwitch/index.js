@@ -2,6 +2,8 @@ import React from "react";
 import MultiButton from "../MultiButton";
 import ThumbButton from "../ThumbButton";
 import AnyQuestions from "../AnyQuestions";
+import Logout from "../Logout";
+
 
 //import StudentPromtView from "../StudentPromptView";
 // import TopicChoice from "../TopicChoice";
@@ -91,9 +93,11 @@ class QuestionSwitch extends React.Component {
       option = <AnyQuestions />;
     }
     return (
+        
         <div className="container">
+          <Logout />
           <div style={{justifyContent: 'center', marginTop: "4rem" }} className="row">
-            <h3  >Understanding/Comfort</h3>
+            <h3  >Add a Topic</h3>
           </div>
           <div style={{ marginTop: "2rem" }} className="row">
             <form onSubmit={this.handleSubmit} class="col s12">

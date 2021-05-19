@@ -53,8 +53,9 @@ class Welcome extends React.Component {
                                 <img src="/images/comp2.png"/>
                             </div>
                             <div class="card-content">
-                            <p>I am a very simple card. I am good at containing small bits of information.
-                            I am convenient because I require little markup to use effectively.</p>
+                            <p>The Instructor adds a topic along with the type of comprehension check they what to 
+                                use to gauge the classes understanding. 
+                            </p>
                             </div>
                         </div>
                     </div>
@@ -67,8 +68,9 @@ class Welcome extends React.Component {
                                 <img src="/images/comp1.png"/>
                             </div>
                             <div class="card-content">
-                            <p>I am a very simple card. I am good at containing small bits of information.
-                            I am convenient because I require little markup to use effectively.</p>
+                            <p>The student is then shown the last prompt the teacher input. After answering the prompt
+                                the student can then wait on the next.
+                            </p>
                             </div>
                         </div>
                     </div>
@@ -78,11 +80,12 @@ class Welcome extends React.Component {
                                 <h1 style={{textDecoration:"underline"}}>Real Time Analytics</h1>
                             </div>
                             <div class="card-image">
-                                <img src="/images/comp3.png"/>
+                                <img src="/images/comp4.png"/>
                             </div>
                             <div class="card-content">
-                            <p>I am a very simple card. I am good at containing small bits of information.
-                            I am convenient because I require little markup to use effectively.</p>
+                            <p>When the teacher chooses they then click the topic from the topic list to view the 
+                            chart from the answers allowing them to effectively gauge the classes comprehension.
+                            </p>
                             </div>
                         </div>
                     </div>

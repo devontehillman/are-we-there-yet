@@ -4,6 +4,10 @@ import ThumbButton from "../ThumbButton";
 import AnyQuestions from "../AnyQuestions";
 import API from "../../utils/API";
 import Container from "react-bootstrap/Container";
+
+import Card from "react-bootstrap/Card";
+
+
 function StudentPromptView() {
   const [topic, setTopic] = useState("");
   const [type, setType] = useState("");
@@ -36,12 +40,12 @@ function StudentPromptView() {
   return (
     <div>
       <Container>
-        <h3>Comprehension Check</h3>
-        {/* <button onClick={handleSubmit}>
-          <input type="submit" value="Submit" />
-        </button> */}
-        <h1 style={{textAlign:"center", textDecoration: "underline;"}}>{topic}</h1>
+        <h3 style={{margin:"20px"}}>Comprehension Check</h3>
+        <Card style={{padding:"15px"}}>
+        {/* <button onClick={handleSubmit}><input type="submit" value="Submit" /></button> */}
+        <h1 style={{textAlign:"center", textDecoration: "underline"}}>{topic}</h1>
         {option}
+        </Card>
       </Container>
     </div>
   );

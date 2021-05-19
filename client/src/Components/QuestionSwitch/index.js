@@ -87,7 +87,7 @@ class QuestionSwitch extends React.Component {
                 <option value="questionsPrompt">Any Questions?</option>
               </select>
               </div>
-              <div class="input-field col xl2 l2 m2 s12 ">
+            <div class="input-field col xl2 l2 m2 s12 ">
               <button class="btn waves-effect waves-light hoverable white-text green darken-3 " variant="primary" type="submit">
                 Submit<i class="material-icons right">send</i>
               </button>

@@ -34,7 +34,7 @@ function MultiButton({ topic }) {
   }
   return (
     <div className="row" >
-       <div className="col s12">
+       <div className="col s12" style={{ display: "flex", justifyContent: "center"}}>
       <button type="button" style={btnStyle} class="col xl2 l2 m2 s12 .multi-btn btn-large hoverable waves-effect waves-light white-text green lighten-3" onClick={handleSubmit} value="1">1</button>
       <button type="button" style={btnStyle} class="col xl2 l2 m2 s12 .multi-btn btn-large hoverable waves-effect waves-light white-text left green lighten-1" onClick={handleSubmit} value="2">2</button>
       <button type="button" style={btnStyle} class="col xl2 l2 m2 s12 .multi-btn btn-large hoverable waves-effect waves-light white-text green left" onClick={handleSubmit} value="3">3</button>

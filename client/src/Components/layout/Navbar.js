@@ -15,7 +15,7 @@ class Navbar extends Component {
               {/* <Nav.Link href="./Register"><span className="glyphicon glyphicon-user"></span>Sign Up</Nav.Link>
               <Nav.Link href="./Login"><span className="glyphicon glyphicon-log-in"></span>Login</Nav.Link> */}
               <Nav.Link href="./addtopic"><span className="glyphicon glyphicon-log-in"></span>Add Topic</Nav.Link>
-              <Nav.Link href="./viewtopics"><span className="glyphicon glyphicon-log-in"></span>See Topics</Nav.Link>
+              <Nav.Link href="./viewtopics"><span className="glyphicon glyphicon-log-in"></span>Answer Prompt</Nav.Link>
             </Nav>
           </Container>
         </NavBar>

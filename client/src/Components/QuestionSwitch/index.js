@@ -9,28 +9,53 @@ import API from "../../utils/API";
 // import App from "../../App";
 // import chart
 
-//import Button from "react-bootstrap/Button";
+import Button from "react-bootstrap/Button";
 
 class QuestionSwitch extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      // prompt:
-      // {
       value: "",
       topic: "",
-      // }
+      topiclist: []
     };
     this.topicChange = this.topicChange.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleTopicClick = this.handleTopicClick.bind(this);
+    this.loadTopics = this.loadTopics.bind(this)
   }
+
+  async loadTopics() {
+    await fetch("/api/topic")
+    .then((res) => res.json())
+    .then((data) => {
+        this.setState({
+        topiclist: data
+      })
+      console.log(this.state.topiclist)
+    })
+  }
+
+  componentDidMount(){
+    this.loadTopics()
+  }
+
+  handleTopicClick(e){
+    // grab idof button clicked and saves to local storage and redirects
+    localStorage.setItem('topicID', e.target.id );
+    window.location.href='/final'
+    //localStorage.removeItem('topicID')
+
+  }
+  
   handleChange(e) {
     this.setState({ value: e.target.value });
   }
   topicChange = (e) => {
     this.setState({ topic: e.target.value });
   };
+
   //   topicChange(e) {
   //     const topic = e.target.value
   //     this.setState(function(state) {
@@ -52,7 +77,9 @@ class QuestionSwitch extends React.Component {
       topic: this.state.topic,
       questionType: this.state.value,
     });
+    window.location.reload();
   }
+
   render() {
     console.log(this.state.value);
     let option;
@@ -65,8 +92,8 @@ class QuestionSwitch extends React.Component {
     }
     return (
         <div className="container">
-          <div style={{ marginTop: "4rem" }} className="row">
-            <h3>Understanding/Comfort</h3>
+          <div style={{justifyContent: 'center', marginTop: "4rem" }} className="row">
+            <h3  >Understanding/Comfort</h3>
           </div>
           <div style={{ marginTop: "2rem" }} className="row">
             <form onSubmit={this.handleSubmit} class="col s12">
@@ -93,6 +120,15 @@ class QuestionSwitch extends React.Component {
               </button>
               </div>
             </form>
+          </div>  
+          <div class=".topic-list">
+          <div  style={{justifyContent: 'center'}} className="row"> 
+            <h3>Topics!</h3>
+          </div>
+          <div className="row topic-list">
+            {this.state.topiclist.map(topiclist => 
+            <Button className="topicbtn" onClick={this.handleTopicClick} style= {{margin:"10px"}} key={topiclist._id} id={topiclist._id}>{topiclist.topic}</Button>)}
+          </div>
           </div>
           {/* {option} */}
           {/* listener for what is chosen. A switchcase for what is chosen.Appropriate component is populated */}

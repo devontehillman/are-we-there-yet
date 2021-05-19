@@ -105,4 +105,13 @@ padding-bottom: 40px;
 .emoji:hover {
     cursor:pointer;
    }
-   
+
+.topic-list{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+}
+.topicbtn{
+    background : #27603C;
+}

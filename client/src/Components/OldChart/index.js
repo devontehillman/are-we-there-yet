@@ -64,13 +64,10 @@ getTopic (){
   render(){
     return (
       <div className="chart">
-          <h3>{this.state.topic}</h3>
         <Bar
           data={this.state.chartData}
           options={{
             title:{
-              display:this.props.displayTitle,
-              text:'Largest Cities In ',
               fontSize:25
             }
           }}

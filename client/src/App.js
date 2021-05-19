@@ -22,6 +22,7 @@ import InstructorTopicPage from "./pages/instructorTopicPage"
 import QuestionSwitch from "./Components/QuestionSwitch";
 import StudentPromptView from "./Components/StudentPromptView";
 import ResponseCollective from "./Components/ResponseCollective";
+import NewChart from "./Components/NewChart"
 
 
 import "./App.css";
@@ -58,6 +59,7 @@ class App extends Component {
             <Route exact path="/" component={Welcome} />
             <Route exact path="/register" component={Register} />
             <Route exact path="/login" component={Login} />
+            <Route exact path="/chart" component={NewChart} />
 
             
             <Switch>

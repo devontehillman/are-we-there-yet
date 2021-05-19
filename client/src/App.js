@@ -58,6 +58,7 @@ class App extends Component {
             <Route exact path="/" component={Welcome} />
             <Route exact path="/register" component={Register} />
             <Route exact path="/login" component={Login} />
+
             
             <Switch>
               {/* these are the route that can only be accessed by users */}

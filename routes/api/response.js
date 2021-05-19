@@ -6,10 +6,13 @@ router
   .get(responseController.findAll)
   .post(responseController.create);
 
-router.route("/:id").get(responseController.findById);
+router
+  .route("/:topicID")
+  // .get(responseController.findById)
+  .get(responseController.findAllAnswers);
 
 router.get("/test", (req, res) => {
-  res.send("Responses")
+  res.send("Responses");
 });
 
 module.exports = router;

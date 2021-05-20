@@ -62,7 +62,7 @@ class Welcome extends React.Component {
                     <div class="col s12 m4 " style={{marginTop: "50px"}}>
                         <div class="card">
                             <div class="card-content">
-                                <h1 style={{textDecoration:"underline"}}>Student Responds</h1>
+                                <h1 style={{textDecoration:"underline"}}>Student Response</h1>
                             </div>
                             <div class="card-image">
                                 <img src="/images/comp1.png"/>

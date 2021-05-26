@@ -5,7 +5,7 @@
 
   ## Table of Contents
 
-  * [Live Link](#live)
+  * [Live Link](https://a-w-t-y.herokuapp.com)
   * [Screenshot](#screenshot)
   * [Contributors](#contributors)
     <br>
@@ -22,7 +22,7 @@
     <br>
   ## Contributors
   github:<br>
-    devontehillman <br>
+    [Devonte Hillman](https://github.com/devontehillman) <br>
     chappand <br>
     colemilwee <br>
     ampieschke <br>

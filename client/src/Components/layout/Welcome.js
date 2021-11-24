@@ -47,13 +47,13 @@ class Welcome extends React.Component {
                     <div class="col s12 m4" style={{marginTop: "-20px"}}>
                         <div class="card">
                             <div class="card-content">
-                                <h1 style={{textDecoration:"underline"}}>Instructor Choose a Topic</h1>
+                                <h1 style={{textDecoration:"underline"}}>Instructor Chooses a Topic</h1>
                             </div>
                             <div class="card-image">
                                 <img src="/images/comp2.png"/>
                             </div>
                             <div class="card-content">
-                            <p>The Instructor adds a topic along with the type of comprehension check they what to 
+                            <p>The Instructor adds a topic along with the type of comprehension check they want to 
                                 use to gauge the classes understanding. 
                             </p>
                             </div>
@@ -62,14 +62,14 @@ class Welcome extends React.Component {
                     <div class="col s12 m4 " style={{marginTop: "50px"}}>
                         <div class="card">
                             <div class="card-content">
-                                <h1 style={{textDecoration:"underline"}}>Student Response</h1>
+                                <h1 style={{textDecoration:"underline"}}>Student Responds</h1>
                             </div>
                             <div class="card-image">
                                 <img src="/images/comp1.png"/>
                             </div>
                             <div class="card-content">
                             <p>The student is then shown the last prompt the teacher input. After answering the prompt
-                                the student can then wait on the next.
+                                the student waits on the next.
                             </p>
                             </div>
                         </div>
@@ -83,8 +83,8 @@ class Welcome extends React.Component {
                                 <img src="/images/comp4.png"/>
                             </div>
                             <div class="card-content">
-                            <p>When the teacher chooses they then click the topic from the topic list to view the 
-                            chart from the answers allowing them to effectively gauge the classes comprehension.
+                            <p>The teacher then chooses a prompt from the topic list to view the classes 
+                             responses and participation so they can effectively gauge the classes comprehension and participation.
                             </p>
                             </div>
                         </div>
